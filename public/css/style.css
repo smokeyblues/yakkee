@@ -1,0 +1,118 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+/* import fonts */
+ @import url('https://fonts.googleapis.com/css?family=Sigmar+One');
+
+
+nav ul a,
+nav .brand-logo {
+  font-family: righteous;
+  color: #444;
+}
+
+nav ul a {
+  font-family: 'Railway', sans-serif;
+}
+
+.main-pic {
+  bottom: -50vh;
+}
+
+.outer-glow {
+  text-shadow: 0 0 10px #FFFFFF;
+}
+
+.dark-shadow {
+  text-shadow: 0 0 10px #000000;
+}
+
+.facebook-icon {
+  color: blue;
+  margin-right: 3vw;
+}
+
+.facebook-icon:hover {
+  color: purple;
+}
+
+.twitter-icon {
+  color: fuchsia;
+}
+
+.twitter-icon:hover {
+  color: blue;
+}
+
+.head {
+  font-family: 'Sigmar One', cursive;
+
+}
+
+.slug {
+  margin-top: 35vh;
+}
+
+.margin-bottom {
+  margin-bottom: 5vh;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  height: 100vh;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container {
+    height: 100vh;
+  }
+
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+    height: 100vh;
+  }
+}
+
+.main-pic {
+  bottom: -50vh;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}

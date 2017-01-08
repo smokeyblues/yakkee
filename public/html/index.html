@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html ng-app="Yakkee" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Yakkee - the Friend Connector</title>
+
+  <!-- CSS  -->
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Sigmar+One" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!-- Angular Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
+
+  <!-- controllers -->
+  <script src="/js/module.yakkee.js"></script>
+  <script src="/js/controller.home.js"></script>
+
+  <!-- socket.io -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.js"></script>
+
+</head>
+<body>
+
+  <ng-include src="'html/navbar.html'"></ng-include>
+
+  <!-- <ng-include src="'html/home.html'"></ng-include> -->
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="head header center teal-text text-darken-4 header-shadow outer-glow">Come Visit Your Friends!</h1>
+        <div class="row center">
+          <h5 class="slug header col s12 light dark-shadow">Anytime.<br>
+             Anywhere. <br>
+             From the comfort of your own home. <br>
+             </h5>
+        </div>
+        <div class="row center">
+          <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1 margin-bottom">Get Started</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax main-pic"><img src="/images/77736736.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">person_pin</i></h2>
+            <h5 class="center">You Are Here</h5>
+
+            <p class="light">And your friends and family are there. <br><br> Wouldn't it be great if you could visit them whenever you wanted to? And not just talk on the phone or even a simple video chat but actually spend time with them. Play games, interact, enjoy each other's company like you are in the same room together. </p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Yakkee Exists to Erase Distance...</h5>
+
+            <p class="light">...between friends and family that aren't able to actually get together as much as they would like. Yakkee was designed to make it easy for people to spend time with friends and family residing in assisted-living facilities, hospitals and anywhere that risks leaving people feeling isolated and lonely.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">thumb_up</i></h2>
+            <h5 class="center">So easy to use</h5>
+
+            <p class="light">The Yakkee interface was designed to be easy to use, paying special attention to the needs of people that may not be comfortable with technology or may those that have disabilities. Our interface allows the user to speak commands, use gestures or use traditional the keyboard and mouse.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light dark-shadow">An app built to bring people together</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img class="responsive-img" src="/images/iStock_000029965210Medium-1.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Contact Us</h4>
+          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light dark-shadow">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img class="responsive-img" src="/images/bigstock-Group-of-Friends-Laughing-32109128.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <ng-include src="'html/footer.html'"></ng-include>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
