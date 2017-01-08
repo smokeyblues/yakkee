@@ -3,6 +3,9 @@ module.exports = (app)=>{
     res.sendFile('index.html', {root : './public/html'});
   });
   app.get('/signup', (req, res)=>{
-    res.sendFile('signup.html', {root: './public/html'})
+    res.sendFile('signon.html', {root: './public/html'})
+  })
+  app.get('/signin', (req, res)=>{
+    res.sendFile('signin.html', {root: './public/html'})
   })
 }
