@@ -28,6 +28,10 @@ var userSchema = mongoose.Schema({
     type      : String,
     required  : 'Please enter a password that is easy for you to remember but hard for others to guess.'
   },
+  profileImg  : {
+    type      : String,
+    default   : '/images/default.png'
+  }
   memberSince : {
     type      : Date,
     default   : Date.now

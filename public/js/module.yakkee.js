@@ -4,7 +4,14 @@ angular.module('Yakkee', ['ngRoute'])
 Router.$inject = ['$routeProvider', '$locationProvider'];
 
 function Router ($routeProvider, $locationProvider) {
-  // $locationProvider.html5Mode(true);
+  $locationProvider.hashPrefix('');
+  $routeProvider.otherwise('/');
+
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
+  
   $routeProvider
     .when("/", {
       templateUrl   : 'html/home.html',

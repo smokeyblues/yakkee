@@ -6,5 +6,13 @@ angular.module('Yakkee')
   function homeController($http, $location) {
     var hc = this;
 
+    hc.parallax = function() {
+      $('.parallax').parallax()
+    }
+
+    hc.sideNav = function() {
+      $('.button-collapse').sideNav();
+    }
+
 
   }

@@ -1,6 +1,7 @@
 require('colors')
 
 var express = require('express'),
+    mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     colors = require('colors'),
     morgan = require('morgan')('dev'),
@@ -10,8 +11,17 @@ var express = require('express'),
 
 var app = express();
 
+mongoose.connect("mongodb://localhost/yakkee", (err)=>{
+  if(err){
+    return console.log("DB failed to connect".red, err);
+  }
+  console.log("mongoDB connected".cyan);
+});
+
 app.use(
   express.static(`public`),
+  bodyParser.json(),
+  bodyParser.urlencoded({extended : true}),
   morgan
 );
 
