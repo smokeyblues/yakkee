@@ -19,16 +19,16 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s12 m6 hoverable">
-          <input id="username" type="text" class="validate">
+          <input id="username" type="text" class="validate" ng-model="sc.signinUser.userName">
           <label for="username">Username</label>
         </div>
         <div class="input-field col s12 m6 hoverable">
-          <input id="password" type="password" class="validate">
+          <input id="password" type="password" class="validate" ng-model="sc.signinUser.password">
           <label for="password">Password</label>
         </div>
       </div>
       <div class="row center">
-        <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Submit</a>
+        <button ng-click="sc.signin()" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Submit</button>
       </div>
     </form>
   </div>

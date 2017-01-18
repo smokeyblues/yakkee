@@ -1,4 +1,5 @@
-require('colors')
+require('colors');
+var config = require('./config.js');
 
 var express = require('express'),
     mongoose = require('mongoose'),
@@ -7,9 +8,16 @@ var express = require('express'),
     morgan = require('morgan')('dev'),
     io = require('socket.io'),
     Routes = require('./routes'),
-    port = process.env.PORT || 8080;
-
-var app = express();
+    port = process.env.PORT || 7788,
+    app = express(),
+    sessions = require('client-sessions')({
+      cookieName : "0_o",
+      secret : config.sessionsSecret,
+      requestKey : "session",
+      cookie : {
+        httpOnly : true
+      }
+    });
 
 mongoose.connect("mongodb://localhost/yakkee", (err)=>{
   if(err){
@@ -22,7 +30,8 @@ app.use(
   express.static(`public`),
   bodyParser.json(),
   bodyParser.urlencoded({extended : true}),
-  morgan
+  morgan,
+  sessions
 );
 
 // Routes

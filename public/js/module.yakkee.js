@@ -1,4 +1,4 @@
-angular.module('Yakkee', ['ngRoute'])
+angular.module('Yakkee', ['ngRoute', 'ngResource'])
   .config(Router);
 
 Router.$inject = ['$routeProvider', '$locationProvider'];
@@ -11,7 +11,7 @@ function Router ($routeProvider, $locationProvider) {
     enabled: true,
     requireBase: false
   });
-  
+
   $routeProvider
     .when("/", {
       templateUrl   : 'html/home.html',
@@ -26,6 +26,6 @@ function Router ($routeProvider, $locationProvider) {
     .when("/signin", {
       templateUrl   : 'html/signin.html',
       controller    : 'signinController',
-      controllerAs  : 'signin'
+      controllerAs  : 'sc'
     })
 }

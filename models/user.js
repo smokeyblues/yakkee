@@ -1,7 +1,10 @@
-var mongoose = require('mongoose');
+const SALTY_BITS = 10;
+
+var mongoose = require('mongoose'),
+    bcrypt = require('bcryptjs');
 
 // Define user
-var userSchema = mongoose.Schema({
+var UserSchema = mongoose.Schema({
   firstName   : {
     type      : String,
     trim      : true,
@@ -12,10 +15,14 @@ var userSchema = mongoose.Schema({
     trim      : true,
     required  : 'Please enter your last name'
   },
+  userName    : {
+    type      : String,
+    required  : true
+  },
   email       : {
     type      : String,
     unique    : 'An account with this email address already exists',
-    required  : `Please enter youe email address so that your friends can contact you. And don't worry we won't send you any spam.`
+    required  : `Please enter youe email address so that your friends can contact you. And don't worry we won't send you any spam.`,
     trim      : true,
     lowercase : true
   },
@@ -31,7 +38,7 @@ var userSchema = mongoose.Schema({
   profileImg  : {
     type      : String,
     default   : '/images/default.png'
-  }
+  },
   memberSince : {
     type      : Date,
     default   : Date.now
@@ -40,7 +47,32 @@ var userSchema = mongoose.Schema({
     type      : mongoose.Schema.ObjectId,
     ref       : 'Family'
   }
-})
+});
 
-Export the user model
-module.exports = mongoose.model('User', userSchema);
+UserSchema.pre('save', function(next) {
+  var user =this;
+
+  if ( !user.isModified('password') ) {
+    return next();
+  }
+
+  bcrypt.genSalt(SALTY_BITS, (saltErr, salt) => {
+    if (saltErr) {
+      return next(saltErr)
+    }
+
+    console.info('SALT generated!'.yellow, salt);
+
+    bcrypt.hash(user.password, salt, (hashErr, hashedPassword) => {
+      if (hashErr) {
+        return next(hashErr);
+      }
+
+      user.password = hashedPassword;
+      next();
+    });
+  });
+});
+
+// Export the user model
+module.exports = mongoose.model('User', UserSchema);

@@ -1,4 +1,4 @@
-<div ng-init="hc.parallax()">
+<div ng-hide="hc.Auth.user" ng-init="hc.parallax()">
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
@@ -11,7 +11,7 @@
              </h5>
         </div>
         <div class="row center">
-          <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1 margin-bottom">Get Started</a>
+          <a href="/signup" id="download-button" class="btn-large waves-effect waves-light teal lighten-1 margin-bottom">Get Started</a>
         </div>
         <br><br>
 
@@ -57,7 +57,7 @@
         <div class="section no-pad-bot">
           <div class="container">
             <div class="row center">
-              <h5 class="header col s12 light dark-shadow">An app built to bring people together</h5>
+              <h5 class="header col s12 light dark-shadow parallax-text" style="font-family: Oswald;">An app built to bring people together</h5>
             </div>
           </div>
         </div>
@@ -78,18 +78,52 @@
         </div>
       </div>
 
-
-      <div class="parallax-container valign-wrapper">
-        <div class="section no-pad-bot">
-          <div class="container">
-            <div class="row center">
-              <h5 class="header col s12 light dark-shadow">A modern responsive front-end framework based on Material Design</h5>
-            </div>
-          </div>
-        </div>
-        <div class="parallax"><img class="responsive-img" src="/images/bigstock-Group-of-Friends-Laughing-32109128.jpg" alt="Unsplashed background img 3"></div>
-      </div>
-
     </div>
+  </div>
+</div>
+
+<div class="container-fluid" ng-if="hc.Auth.user">
+  <div class="container full-height">
+    <div class="row">
+
+      <!-- search bar starts here -->
+      <div class="input-group">
+        <div class="col-xs-12" style="margin-top: 2em">
+          <h3 class="center-text" ng-if="!hc.search">{{hc.placeholder}}</h3>
+          <input class="form-control has-feedback col s12 font-size-2 center-text" autofocus type="text" ng-model="hc.search" placeholder="Search by name or email" ng-change="hc.figureOutItemsToDisplay()" />
+
+
+        </div>
+      </div>
+      <!-- <div class="col s6 m4">
+        <h2>First Column</h2>
+      </div>
+      <div class="col s6 m4">
+        <h2>Second Column</h2>
+      </div>
+      <div class="col s6 m4">
+        <h2>Third Column</h2>
+      </div> -->
+    </div>
+    <div class="row">
+      <!-- Speech recognition starts here -->
+      <div class="col s12 center-text" ng-click="hc.webSpeech();">
+            <i class="material-icons font-size-4 mic">keyboard_voice</i>
+      </div>
+    </div>
+
+    <!-- <pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage" ng-change="pageChanged()" class="pagination">
+    </pagination> -->
+    <div class="list-group ng-hide col-md-4 col-md-offset-4" ng-show="hc.search" align="center">
+      <li ng-repeat="user in hc.pagedSearchItems" class="list-group-item" align="center">
+        <a ng-href="https://meet.jit.si/{{hc.Auth.user}}meets{{user.username}}">
+
+        <!-- <img ng-src="{{hc.user.profileImageURL}}" alt="{{user.displayName}}" /> -->
+        <h5 class="list-group-item-heading" ng-bind="user.userName" ></h5>
+
+        </a>
+      </li>
+    </div>
+
   </div>
 </div>

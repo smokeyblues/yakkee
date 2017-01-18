@@ -16,6 +16,50 @@ nav .brand-logo {
   color: #444;
 }
 
+li {
+  list-style: none;
+}
+
+h3 {
+  font-family: righteous;
+}
+
+.parallax-text {
+  font-family: Oswald;
+  font-size: 5rem;
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.font-size-2 {
+  font-size: 2rem!important;
+}
+
+.font-size-4 {
+  font-size: 4rem!important;
+}
+
+.mic {
+  color: blue;
+}
+
+.mic:hover {
+  color: red;
+}
+
+footer .brand-logo {
+  color: white;
+  font-family: righteous;
+  text-align: center;
+  font-size: 3rem;
+}
+
 nav ul a {
   font-family: 'Railway', sans-serif;
 }
@@ -51,11 +95,15 @@ nav ul a {
 
 .head {
   font-family: 'Sigmar One', cursive;
+}
 
+.black-text {
+  color: black;
 }
 
 .slug {
-  margin-top: 35vh;
+  margin-top: 20vh;
+  font-size: 3rem;
 }
 
 .margin-bottom {
