@@ -138,5 +138,7 @@ angular.module('Yakkee')
         })
     }
 
+    console.log('logged in user: ', hc.Auth.user);
+
 
   }

@@ -1,0 +1,58 @@
+<div class="container-fluid" ng-if="hc.Auth.user">
+  <div class="container full-height">
+    <div class="row">
+
+      <!-- search bar starts here -->
+      <div class="input-group">
+        <div class="col-xs-12" style="margin-top: 2em">
+          <h3 class="center-text" ng-if="!hc.search">{{hc.placeholder}}</h3>
+          <input class="form-control has-feedback col s12 font-size-2 center-text" autofocus type="text" ng-model="hc.search" placeholder="Search by name or email" ng-change="hc.figureOutItemsToDisplay()" />
+
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- Speech recognition starts here -->
+      <div class="col s12 center-text" ng-if="!hc.search" ng-click="hc.webSpeech();">
+            <i class="material-icons font-size-4 mic">keyboard_voice</i>
+      </div>
+    </div>
+
+    <!-- <pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage" ng-change="pageChanged()" class="pagination">
+    </pagination> -->
+    <div class="list-group ng-hide" ng-show="hc.search" align="center">
+      <li ng-repeat="user in hc.pagedSearchItems" class="list-group-item" align="center">
+        <div class="card blue-grey darken-1  m4 offset-m4">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img src="/images/default.png" alt="{{user.firstName}} {{user.lastName}}" class="activator profile-img">
+          </div>
+          <div class="card-content white">
+            <span class="card-title activator grey-text text-darken-4">{{user.firstName}} {{user.lastName}}<i class="material-icons right">more_vert</i></span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title activator grey-text text-darken-4">{{user.firstName}} {{user.lastName}}<i class="material-icons right">close</i></span>
+            <div class="row">
+              <div class="col s4 card-icon">
+                <h3>Video Yak</h3>
+                <i class="fa fa-video-camera fa-4x" aria-hidden="true"></i>
+              </div>
+              <div class="col s4 card-icon">
+                <h3>Phone Yak</h3>
+                <i class="fa fa-phone fa-4x" aria-hidden="true"></i>
+              </div>
+              <div class="col s4 card-icon">
+                <h3>Yak</h3>
+                <i class="fa fa-mobile fa-4x" aria-hidden="true"></i>
+                <h3>Messenger</h3>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </li>
+    </div>
+
+  </div>
+</div>
