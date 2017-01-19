@@ -25,6 +25,10 @@ module.exports = (app)=>{
   app.post('/api/users', Users.create);
   app.post('/api/users/login', Users.login);
 
+  // app.get('/video-yak/:videoRoomID', (req, res)=>{
+  //   res.sendFile('videochat.html', {root : './public/html'});
+  // })
+
   // very last route
   app.get('*', (req, res)=>{
     res.sendFile('index.html', {root : './public/html'});

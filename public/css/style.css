@@ -16,6 +16,21 @@ nav .brand-logo {
   color: #444;
 }
 
+#remoteVideo {
+  width: 100vw;
+  height: 80vh;
+}
+
+#localVideo {
+  width: 30vw;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: rotateY(180deg);
+  -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+  -moz-transform:rotateY(180deg); /* Firefox */
+}
+
 li {
   list-style: none;
 }

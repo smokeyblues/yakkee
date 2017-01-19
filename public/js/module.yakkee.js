@@ -14,23 +14,28 @@ function Router ($routeProvider, $locationProvider) {
 
   $routeProvider
     .when('/', {
-      templateUrl   : 'html/home.html',
+      templateUrl   : '/html/home.html',
       controller    : 'homeController',
       controllerAs  : 'hc'
     })
     .when('/signup', {
-      templateUrl   : 'html/register.html',
+      templateUrl   : '/html/register.html',
       controller    : 'registerController',
       controllerAs  : 'rc'
     })
     .when('/signin', {
-      templateUrl   : 'html/signin.html',
+      templateUrl   : '/html/signin.html',
       controller    : 'signinController',
       controllerAs  : 'sc'
     })
     .when('/dashboard', {
-      templateUrl   : 'html/dashboard.html',
+      templateUrl   : '/html/dashboard.html',
       controller    : 'homeController',
       controllerAs  : 'hc'
+    })
+    .when('/video-yak/:videoRoomID', {
+      templateUrl   : '/html/videochat.html',
+      controller    : 'vcController',
+      controllerAs  : 'vc'
     })
 }

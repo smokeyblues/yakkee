@@ -126,7 +126,11 @@ angular.module('Yakkee')
     $http.get('api/me')
       .then( function(resp){
         hc.Auth.user = resp.data;
-        // console.log(resp.data);
+        // if user is logged in then hc.Auth.user exists so push user to dashboard
+        // if (hc.Auth.user  $location.url !== '/video-yak/') {
+        //   console.log('$location: ', $location);
+        //   $location.url('/dashboard');
+        // }
       })
 
     hc.logout = function() {
@@ -137,8 +141,5 @@ angular.module('Yakkee')
           $location.url('/');
         })
     }
-
-    console.log('logged in user: ', hc.Auth.user);
-
 
   }
