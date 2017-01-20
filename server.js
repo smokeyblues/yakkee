@@ -59,7 +59,7 @@ Routes(app);
 http.createServer( httpsConfig, app ).listen( ports.https );
 
 try {
-  HTTPS.createServer( httpsConfig, app ).listen( ports.https );
+  https.createServer( httpsConfig, app ).listen( ports.https );
 } catch (e) {
   console.error('Could not HTTPS server', e);
 }
