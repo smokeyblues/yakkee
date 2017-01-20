@@ -2,7 +2,10 @@
 
 var isInitiator;
 
-window.room = prompt("Enter room name:");
+if (Auth.user) {
+  window.room = prompt("Enter room name:");
+}
+
 
 var socket = io.connect();
 
