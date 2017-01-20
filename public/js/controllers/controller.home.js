@@ -45,14 +45,15 @@ angular.module('Yakkee')
 
       hc.sendInvite = function (to, from) {
         console.log(from.firstName + ' ' + from.lastName + ' to ' + to.firstName + ' ' + to.lastName);
-        var roomName = 'room' + to._id;
-        var inviteUrl = 'https://meet.jit.si/' + from.firstName + from.lastName + 'meets' + to.firstName + to.lastName
+         hc.roomName = 'room' + to._id;
+         hc.inviteUrl = 'https://meet.jit.si/' + to._id;
         console.log(to);
-        var inviteData = {
+         hc.inviteData = {
           sender: from,
           receiver: to,
           link: inviteUrl
         }
+        console.log('inviteUrl: ', hc.inviteUrl);
         Socket.emit('vcInviteReceived', inviteData);
         console.log('RoomName: ' + roomName);
 
