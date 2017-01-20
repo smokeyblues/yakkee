@@ -69,7 +69,7 @@ angular.module('Yakkee')
       trace('Requesting local stream');
       startButton.disabled = true;
       navigator.mediaDevices.getUserMedia({
-        audio: false,
+        audio: true,
         video: true
       })
       .then(gotStream)
@@ -117,7 +117,7 @@ angular.module('Yakkee')
 
       trace('pc1 createOffer start');
       pc1.createOffer(
-        offerOptions
+        vc.offerOptions
       ).then(
         onCreateOfferSuccess,
         onCreateSessionDescriptionError

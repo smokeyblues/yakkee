@@ -16,6 +16,11 @@ nav .brand-logo {
   color: #444;
 }
 
+.jitsi {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
 #remoteVideo {
   width: 100vw;
   height: 80vh;
