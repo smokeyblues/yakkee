@@ -36,10 +36,14 @@ mongoose.connect("mongodb://localhost/yakkee", (err)=>{
   console.log("mongoDB connected".cyan);
 });
 
-HTTP.createServer( app ).listen( ports.http );
+var httpServer = HTTP.createServer( app ).listen( ports.http, ()=>{
+  console.log(`Server listening on port ${ports.http}`);
+} );
 
 try {
-  HTTPS.createServer( httpsConfig, app ).listen( ports.https );
+  var httpsServer = HTTPS.createServer( httpsConfig, app ).listen( ports.https, ()=>{
+    console.log(`HTTPS Server listening on port ${ports.https}`);
+  } );
 } catch (e) {
   console.error('Could not HTTPS server', e);
 }
@@ -64,7 +68,7 @@ app.use(
 // Routes
 Routes(app);
 
-var io = socketIO.listen(server);
+var io = socketIO.listen(httpsServer);
 io.sockets.on('connection', function(socket) {
 
   // convenience function to log server messages on the client
@@ -119,6 +123,6 @@ io.sockets.on('connection', function(socket) {
 
 });
 
-server.listen(port, ()=>{
-  console.log(`Server running on ${port}`);
-})
+// server.listen(port, ()=>{
+//   console.log(`Server running on ${port}`);
+// })
