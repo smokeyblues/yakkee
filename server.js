@@ -2,8 +2,8 @@ require('colors');
 var config = require('./config.js');
 
 var express = require('express'),
-    http = require('http'),
-    https = require('https'),
+    HTTP = require('http'),
+    HTTPS = require('https'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     colors = require('colors'),
@@ -36,6 +36,14 @@ mongoose.connect("mongodb://localhost/yakkee", (err)=>{
   console.log("mongoDB connected".cyan);
 });
 
+HTTP.createServer( httpsConfig, app ).listen( ports.http );
+
+try {
+  HTTPS.createServer( httpsConfig, app ).listen( ports.https );
+} catch (e) {
+  console.error('Could not HTTPS server', e);
+}
+
 app.all('*', (req, res, next )=> {
   if ( req.protocol === 'http' ) {
     res.set('X-Forwarded-Proto', 'https');
@@ -55,14 +63,6 @@ app.use(
 
 // Routes
 Routes(app);
-
-http.createServer( httpsConfig, app ).listen( ports.http );
-
-try {
-  https.createServer( httpsConfig, app ).listen( ports.https );
-} catch (e) {
-  console.error('Could not HTTPS server', e);
-}
 
 var io = socketIO.listen(server);
 io.sockets.on('connection', function(socket) {
