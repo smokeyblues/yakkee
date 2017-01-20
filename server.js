@@ -89,7 +89,7 @@ io.sockets.on('connection', function(socket) {
     log('Received request to create or join room ' + room);
 
     var numClients = io.sockets.sockets;
-    console.log('io.sockets object: '.yellow, io.sockets.rooms);
+    console.log('io.sockets.sockets object: '.yellow, io.sockets.sockets);
     log('Room ' + room + ' now has ' + numClients + ' client(s)');
 
     if (numClients <= 1) {
