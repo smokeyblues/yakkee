@@ -87,7 +87,6 @@ angular.module('Yakkee')
     };
 
     hc.figureOutItemsToDisplay = function () {
-      console.log('figureOutItemsToDisplay ran');
       hc.filteredItems = $filter('filter')(hc.users, {
         $: hc.search
       });
