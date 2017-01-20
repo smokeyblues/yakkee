@@ -3,13 +3,21 @@ var config = require('./config.js');
 
 var express = require('express'),
     http = require('http'),
+    https = require('https'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     colors = require('colors'),
-    morgan = require('morgan')('dev'),
+    morgan = require('morgan')('common'),
     socketIO = require('socket.io'),
     Routes = require('./routes'),
-    port = process.env.PORT || 80,
+    ports = {
+      http:   process.env.PORT || 80,
+      https:  process.env.PORT_SSL || 443
+    },
+    httpsConfig = {
+      fs.readFileSync('/etc/letsencrypt/live/yakkee.com/privkey.pem'),
+      fs.readFileSync('/etc/letsencrypt/live/yakkee.com/cert.pem')
+    },
     app = express(),
     sessions = require('client-sessions')({
       cookieName : "0_o",
@@ -27,6 +35,15 @@ mongoose.connect("mongodb://localhost/yakkee", (err)=>{
   console.log("mongoDB connected".cyan);
 });
 
+app.all('*', (req, res, next )=> {
+  if ( req.protocol === 'http' ) {
+    res.set('X-Forwarded-Proto', 'https');
+    res.redirect('https://' + req.headers.host + req.url);
+  } else {
+    next();
+  }
+});
+
 app.use(
   express.static(`public`),
   bodyParser.json(),
@@ -38,7 +55,14 @@ app.use(
 // Routes
 Routes(app);
 
-var server =http.createServer(app);
+HTTP.createServer( httpsConfig, app ).listen( ports.https );
+
+try {
+  HTTPS.createServer( httpsConfig, app ).listen( ports.https );
+} catch (e) {
+  console.error('Could not HTTPS server', e);
+}
+
 var io = socketIO.listen(server);
 io.sockets.on('connection', function(socket) {
 
