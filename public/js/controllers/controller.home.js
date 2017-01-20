@@ -1,11 +1,38 @@
 angular.module('Yakkee')
   .controller('homeController', homeController);
 
-  homeController.$inject = ['$scope', '$http', '$location', '$filter', 'Auth', 'User'];
+  homeController.$inject = ['$scope', '$http', '$location', '$filter', 'Auth', 'User', 'Socket'];
 
   function homeController($scope, $http, $location, $filter, Auth, User) {
     var hc = this;
     hc.placeholder = "With whom would you care to Yak?"
+
+    hc.inviteReceived = false;
+
+    hc.sendInvite = function (to, from) {
+      console.log(from.displayName, 'to', to.displayName);
+      var roomName = 'room' + to._id;
+      var inviteUrl = 'https://yakkee.com/' + from._id //firstName + from.lastName + 'meets' + to.firstName + to.lastName
+      console.log(to);
+      var inviteData = {
+        sender: from,
+        receiver: to,
+        link: inviteUrl
+      }
+      Socket.emit('vcInviteReceived', inviteData);
+      console.log('RoomName: ' + roomName);
+    }
+
+    Socket.on('triggerInvite', function(inviteData){
+      console.log(inviteData);
+      hc.inviteReceived = true;
+      hc.invitation = inviteData;
+      console.log(hc.invitation);
+    });
+
+    hc.inviteDenied = function() {
+      hc.inviteReceived = false;
+    };
 
     User.query(function (data) {
       hc.users = data;
@@ -16,35 +43,35 @@ angular.module('Yakkee')
 
       hc.inviteReceived = false;
 
-      // hc.sendInvite = function (to, from) {
-      //   console.log(from.displayName, 'to', to.displayName);
-      //   var roomName = 'room' + to._id;
-      //   var inviteUrl = 'https://meet.jit.si/' + from.firstName + from.lastName + 'meets' + to.firstName + to.lastName
-      //   console.log(to);
-      //   var inviteData = {
-      //     sender: from,
-      //     receiver: to,
-      //     link: inviteUrl
-      //   }
-      //   Socket.emit('vcInviteReceived', inviteData);
-      //   console.log('RoomName: ' + roomName);
-      //
-      // }
+      hc.sendInvite = function (to, from) {
+        console.log(from.displayName, 'to', to.displayName);
+        var roomName = 'room' + to._id;
+        var inviteUrl = 'https://meet.jit.si/' + from.firstName + from.lastName + 'meets' + to.firstName + to.lastName
+        console.log(to);
+        var inviteData = {
+          sender: from,
+          receiver: to,
+          link: inviteUrl
+        }
+        Socket.emit('vcInviteReceived', inviteData);
+        console.log('RoomName: ' + roomName);
 
-      // Socket.on('beacon', function(){
-      //   console.log('socket.io is working');
-      // })
+      }
 
-      // Socket.on('triggerInvite', function(inviteData){
-      //   console.log(inviteData);
-      //   hc.inviteReceived = true;
-      //   hc.invitation = inviteData;
-      //   console.log(hc.invitation);
-      // });
+      Socket.on('beacon', function(){
+        console.log('socket.io is working');
+      })
 
-      // hc.inviteDenied = function() {
-      //   hc.inviteReceived = false;
-      // };
+      Socket.on('triggerInvite', function(inviteData){
+        console.log(inviteData);
+        hc.inviteReceived = true;
+        hc.invitation = inviteData;
+        console.log(hc.invitation);
+      });
+
+      hc.inviteDenied = function() {
+        hc.inviteReceived = false;
+      };
 
       hc.grammar = '#JSGF V1.0; grammar userNames; public <userName> = ' + hc.userNames.join(' | ') + ' ;'
       hc.buildPager();
