@@ -1,8 +1,8 @@
 'use strict';
 
 // Create the Socket.io wrapper service
-angular.module('Yakkee').service('Socket', ['Auth', '$state', '$timeout',
-  function (Auth, $state, $timeout) {
+angular.module('Yakkee').service('Socket', ['Auth', '$timeout',
+  function (Auth, $timeout) {
     // Connect to Socket.io server
     this.connect = function () {
       // Connect only when authenticated
