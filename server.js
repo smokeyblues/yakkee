@@ -91,7 +91,7 @@ io.sockets.on('connection', function(socket) {
     var numClients = io.sockets.sockets.length;
     log('Room ' + room + ' now has ' + numClients + ' client(s)');
 
-    if (numClients <== 1) {
+    if (numClients <= 1) {
       socket.join(room);
       log('Client ID ' + socket.id + ' created room ' + room);
       socket.emit('created', room, socket.id);
