@@ -3,7 +3,7 @@ angular.module('Yakkee')
 
   homeController.$inject = ['$scope', '$http', '$location', '$filter', 'Auth', 'User', 'Socket'];
 
-  function homeController($scope, $http, $location, $filter, Auth, User) {
+  function homeController($scope, $http, $location, $filter, Auth, User, Socket) {
     var hc = this;
     hc.placeholder = "With whom would you care to Yak?"
 
