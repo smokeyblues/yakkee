@@ -84,11 +84,12 @@ io.sockets.on('connection', function(socket) {
     socket.broadcast.emit('message', message);
   });
 
-  //
+  //listening for emit from main.js line 11
   socket.on('create or join', function(room) {
     log('Received request to create or join room ' + room);
 
-    var numClients = io.sockets.sockets.length;
+    var numClients = io.sockets.sockets;
+    console.log('io.sockets.sockets.length: '.yellow, io.sockets.sockets.length);
     log('Room ' + room + ' now has ' + numClients + ' client(s)');
 
     if (numClients <= 1) {
