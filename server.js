@@ -16,8 +16,8 @@ var express = require('express'),
       https:  process.env.PORT_SSL || 443
     },
     httpsConfig = {
-      fs.readFileSync('/etc/letsencrypt/live/yakkee.com/privkey.pem'),
-      fs.readFileSync('/etc/letsencrypt/live/yakkee.com/cert.pem')
+      key:    fs.readFileSync('/etc/letsencrypt/live/yakkee.com/privkey.pem'),
+      cert:   fs.readFileSync('/etc/letsencrypt/live/yakkee.com/cert.pem')
     },
     app = express(),
     sessions = require('client-sessions')({
