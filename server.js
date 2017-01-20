@@ -88,11 +88,11 @@ io.sockets.on('connection', function(socket) {
   socket.on('create or join', function(room) {
     log('Received request to create or join room ' + room);
 
-    var numClients = io.sockets.sockets;
-    console.log('io.sockets.sockets object: '.yellow, io.sockets.sockets);
-    log('Room ' + room + ' now has ' + numClients + ' client(s)');
+    var numClients = io.sockets.sockets.length;
+    // console.log('io.sockets.sockets object: '.yellow, io.sockets.sockets);
+    // log('Room ' + room + ' now has ' + numClients + ' client(s)');
 
-    if (numClients <= 1) {
+    if (numClients <= 1 || undefined) {
       socket.join(room);
       log('Client ID ' + socket.id + ' created room ' + room);
       socket.emit('created', room, socket.id);
