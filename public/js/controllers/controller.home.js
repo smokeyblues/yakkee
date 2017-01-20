@@ -53,7 +53,7 @@ angular.module('Yakkee')
           receiver: to,
           link: inviteUrl
         }
-        console.log('inviteUrl: ', hc.inviteUrl);
+        console.log('inviteUrl: ', inviteUrl);
         Socket.emit('vcInviteReceived', inviteData);
         console.log('RoomName: ' + roomName);
 
