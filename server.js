@@ -56,7 +56,7 @@ app.use(
 // Routes
 Routes(app);
 
-http.createServer( httpsConfig, app ).listen( ports.https );
+http.createServer( httpsConfig, app ).listen( ports.http );
 
 try {
   https.createServer( httpsConfig, app ).listen( ports.https );
