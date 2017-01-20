@@ -119,13 +119,13 @@
             <span class="card-title activator grey-text text-darken-4">{{user.firstName}} {{user.lastName}}<i class="material-icons right">close</i></span>
             <div class="row">
               <!-- /video-yak/{{hc.Auth.user._id}}_{{user._id}} -->
-              <a href="">
-                <div class="col s4 card-icon">
+              <a href="#">
+                <div class="col s4 card-icon" ng-click="sendInvite(user, Auth.user)">
                   <h3>Video Yak</h3>
                   <i class="fa fa-video-camera fa-4x" aria-hidden="true"></i>
                 </div>
               </a>
-              <div class="col s4 card-icon" ng-click="sendInvite(user, Auth.user)">
+              <div class="col s4 card-icon">
                 <h3>Phone Yak</h3>
                 <i class="fa fa-phone fa-4x" aria-hidden="true"></i>
               </div>
