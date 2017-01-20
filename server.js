@@ -10,6 +10,7 @@ var express = require('express'),
     morgan = require('morgan')('common'),
     socketIO = require('socket.io'),
     Routes = require('./routes'),
+    fs = require('fs'),
     ports = {
       http:   process.env.PORT || 80,
       https:  process.env.PORT_SSL || 443
