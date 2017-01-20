@@ -84,13 +84,14 @@ io.sockets.on('connection', function(socket) {
     socket.broadcast.emit('message', message);
   });
 
+  //
   socket.on('create or join', function(room) {
     log('Received request to create or join room ' + room);
 
     var numClients = io.sockets.sockets.length;
     log('Room ' + room + ' now has ' + numClients + ' client(s)');
 
-    if (numClients === 1) {
+    if (numClients <== 1) {
       socket.join(room);
       log('Client ID ' + socket.id + ' created room ' + room);
       socket.emit('created', room, socket.id);
