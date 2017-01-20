@@ -9,7 +9,7 @@ var express = require('express'),
     morgan = require('morgan')('dev'),
     socketIO = require('socket.io'),
     Routes = require('./routes'),
-    port = process.env.PORT || 7788,
+    port = process.env.PORT || 80,
     app = express(),
     sessions = require('client-sessions')({
       cookieName : "0_o",
