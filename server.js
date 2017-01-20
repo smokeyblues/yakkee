@@ -119,6 +119,14 @@ io.sockets.on('connection', function(socket) {
     }
   });
 
+  socket.on('vcInviteReceived', function(inviteData) {
+    var inviteeRoom = `room${inviteData.receiver._id}`
+    var inviterMessage = `Hi from ${inviteData.sender.firstName} ${inviteData.sender.lastName}`
+    console.log(`An invite to ${inviteData.link} was sent to ${inviteData.receiver.firstName} ${inviteData.receiver.lastName}, line 117 of config/lib/socket.io.js`);
+    socket.join(inviteeRoom);
+    socket.broadcast.to(inviteeRoom).emit('triggerInvite', inviteData);
+  });
+
   socket.on('bye', function(){
     console.log('received bye');
   });
