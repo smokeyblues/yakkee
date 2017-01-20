@@ -36,7 +36,7 @@ mongoose.connect("mongodb://localhost/yakkee", (err)=>{
   console.log("mongoDB connected".cyan);
 });
 
-HTTP.createServer( httpsConfig, app ).listen( ports.http );
+HTTP.createServer( app ).listen( ports.http );
 
 try {
   HTTPS.createServer( httpsConfig, app ).listen( ports.https );
