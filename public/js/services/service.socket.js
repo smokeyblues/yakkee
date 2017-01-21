@@ -5,7 +5,7 @@ angular.module('Yakkee').service('Socket', ['Auth', '$timeout',
   function (Auth, $timeout) {
     // Connect to Socket.io server
     this.connect = function () {
-      var sock = this
+      var sock = this;
       // Connect only when authenticated
       console.log('AURH USER', Auth.user)
       Auth.checkAuth()
@@ -17,12 +17,12 @@ angular.module('Yakkee').service('Socket', ['Auth', '$timeout',
         })
 
     };
-    this.connect();
+    sock.connect();
 
     // Wrap the Socket.io 'on' method
-    this.on = function (eventName, callback) {
-      if (this.socket) {
-        this.socket.on(eventName, function (data) {
+    sock.on = function (eventName, callback) {
+      if (sock.socket) {
+        sock.socket.on(eventName, function (data) {
           $timeout(function () {
             callback(data);
           });
@@ -31,16 +31,16 @@ angular.module('Yakkee').service('Socket', ['Auth', '$timeout',
     };
 
     // Wrap the Socket.io 'emit' method
-    this.emit = function (eventName, data) {
-      if (this.socket) {
-        this.socket.emit(eventName, data);
+    sock.emit = function (eventName, data) {
+      if (sock.socket) {
+        sock.socket.emit(eventName, data);
       }
     };
 
     // Wrap the Socket.io 'removeListener' method
-    this.removeListener = function (eventName) {
-      if (this.socket) {
-        this.socket.removeListener(eventName);
+    sock.removeListener = function (eventName) {
+      if (sock.socket) {
+        sock.socket.removeListener(eventName);
       }
     };
   }

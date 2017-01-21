@@ -124,7 +124,7 @@ io.on('connection', function(socket) {
     console.log('vcInviteReceived was triggered');
     var inviteeRoom = `room${inviteData.receiver._id}`
     var inviterMessage = `Hi from ${inviteData.sender.firstName} ${inviteData.sender.lastName}`
-    console.log(`An invite to ${inviteData.link} was sent to ${inviteData.receiver.firstName} ${inviteData.receiver.lastName}, line 117 of config/lib/socket.io.js`);
+    console.log(`An invite to ${inviteData.link} was sent to ${inviteData.receiver.firstName} ${inviteData.receiver.lastName}, line 127 of server.js`);
     socket.join(inviteeRoom);
     socket.broadcast.to(inviteeRoom).emit('triggerInvite', inviteData);
   });
