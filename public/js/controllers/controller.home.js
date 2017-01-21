@@ -14,7 +14,7 @@ angular.module('Yakkee')
       console.log(from.firstName + ' ' + from.lastName + ' to ' + to.firstName + ' ' + to.lastName);
        var roomName = 'room' + to._id;
        var inviteUrl = 'https://meet.jit.si/' + to._id;
-      console.log(to);
+      // console.log(to);
        var inviteData = {
         sender: from,
         receiver: to,
