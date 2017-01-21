@@ -72,7 +72,7 @@ var io = socketIO.listen(httpsServer);
 io.on('connection', function(socket) {
   console.log(`Socket 'connection' event triggered`);
   socket.on('signedIn', function (user) {
-    console.log(`'signIn' event was triggered`);
+    console.log(`'signedIn' event was triggered`);
     var roomName = user._id;
     console.log('roomName', roomName);
     socket.join(roomName);
