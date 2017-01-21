@@ -37,7 +37,7 @@ angular.module('Yakkee')
         console.log('inviteReceived is now set to ', hc.inviteReceived);
         hc.invitation = inviteData;
         console.log(hc.invitation);
-      })
+      });
     });
 
     hc.inviteAccepted =function(rsvp) {
