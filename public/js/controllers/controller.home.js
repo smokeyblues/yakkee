@@ -47,7 +47,7 @@ angular.module('Yakkee')
     hc.inviteAccepted = function(rsvp) {
       console.log('Invite from ' + rsvp.sender.firstName + ' ' + rsvp.sender.lastName + ' ' + rsvp.receiver.firstName + ' ' + rsvp.receiver.lastName + ' was accepted');
       hc.inviteReceived = false;
-      Socket.broadcast.emit('yourInviteWasAccepted', rsvp);
+      Socket.emit('yourInviteWasAccepted', rsvp);
       $location.url('/video-yak/' + rsvp.sender._id + '_' + rsvp.receiver._id)
     }
 
