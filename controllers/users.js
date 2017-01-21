@@ -20,7 +20,7 @@ module.exports = {
   create : (req, res)=>{
     // Creating registering a new user
 
-    var yakker = new User(req.body);
+    var yakker = new User(req.body.data);
 
     yakker.save((err, doc)=>{
       if (err) {
