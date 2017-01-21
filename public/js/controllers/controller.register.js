@@ -9,7 +9,14 @@ angular.module('Yakkee')
     rc.Auth = Auth;
     rc.signup = function(){
       Upload
-        .upload('/api/users', rc.signupUser)
+        .upload({
+          url   : '/api/users',
+          method: 'POST',
+          data  : {
+            files : rc.signupUser.profileImg,
+            data  : rc.signupUser
+          }
+        })
         .then(function(returnData){
           console.log('SIGNUP : ',returnData );
           if (returnData.data._id) {
