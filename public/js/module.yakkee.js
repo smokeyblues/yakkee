@@ -1,4 +1,4 @@
-angular.module('Yakkee', ['ngRoute', 'ngResource'])
+angular.module('Yakkee', ['ngRoute', 'ngResource', 'ngFileUpload'])
   .config(Router);
 
 Router.$inject = ['$routeProvider', '$locationProvider'];

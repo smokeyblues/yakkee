@@ -29,6 +29,16 @@
           </div>
         </div>
         <div class="row">
+          <div class="input-field col s12 hoverable">
+            <input
+         type="file"
+         ng-model="rc.signupUser.photo"
+         ngf-accept="'image/*'"
+         ngf-pattern="'image/*'"
+         >
+          </div>
+        </div>
+        <div class="row">
           <div class="input-field col s12 m6 hoverable">
             <input id="email" type="email" class="validate" ng-model="rc.signupUser.email">
             <label for="email">Email</label>
