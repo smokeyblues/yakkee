@@ -20,8 +20,9 @@ module.exports = {
 
   create : (req, res)=>{
     // Creating registering a new user
-    var file = req.files.files[0];
+    var file = req.files.files;
     console.log(`file passed from create user: `, req);
+    console.log(`req.files.files: `, req.files.files);
 
     // fs.writeFileSync('/public/images/profile-pics', file, function(err){
     //   if (err) {
