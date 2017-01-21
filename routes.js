@@ -1,7 +1,8 @@
 var Users = require('./controllers/users');
 var User = require('./models/user');
 var Middleware = require('./middleware');
-var mongoose = require('mongoose')
+var mongoose = require('mongoose');
+var multiparty = require('connect-multiparty');
 
 module.exports = (app)=>{
   app.get('/', (req, res)=>{
@@ -22,7 +23,7 @@ module.exports = (app)=>{
   });
 
   app.get('/api/users', Middleware.isLoggedIn, Users.get);
-  app.post('/api/users', Users.create);
+  app.post('/api/users', multiparty, Users.create);
   app.post('/api/users/login', Users.login);
 
   // app.get('/video-yak/:videoRoomID', (req, res)=>{
