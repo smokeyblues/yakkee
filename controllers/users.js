@@ -26,11 +26,7 @@ module.exports = {
 
     var fp = '/images/profile-pics/'+file.originalFilename
 
-    fs.writeFileSync('./public' + fp, file, function(err){
-      if (err) {
-        return console.log(`fs.writeFileSync error: `, err);
-      }
-    });
+    fs.writeFileSync('./public' + fp, file);
     req.body.data.profileImg = fp
     var yakker = new User(req.body.data);
     console.log(req.files.file);
