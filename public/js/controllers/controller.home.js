@@ -9,6 +9,26 @@ angular.module('Yakkee')
 
     hc.inviteReceived = false;
 
+    hc.sendInvite = function (to, from) {
+      console.log(from.firstName + ' ' + from.lastName + ' to ' + to.firstName + ' ' + to.lastName);
+       var roomName = 'room' + to._id;
+       var inviteUrl = 'https://meet.jit.si/' + to._id;
+      console.log(to);
+       var inviteData = {
+        sender: from,
+        receiver: to,
+        link: inviteUrl
+      }
+      console.log('inviteUrl: ', inviteUrl);
+      console.log('vcInviteReceived should be emitted on next line');
+      Socket.emit('vcInviteReceived', inviteData);
+      console.log('RoomName: ' + roomName);
+    }
+
+    Socket.on('beacon', function(){
+      console.log('socket.io is working');
+    })
+
     Socket.on('triggerInvite', function(inviteData){
       console.log('triggerInvite was triggered');
       hc.inviteReceived = true;
@@ -27,38 +47,7 @@ angular.module('Yakkee')
         return element.firstName + ' ' + element.lastName
       });
 
-      hc.inviteReceived = false;
 
-      hc.sendInvite = function (to, from) {
-        console.log(from.firstName + ' ' + from.lastName + ' to ' + to.firstName + ' ' + to.lastName);
-         var roomName = 'room' + to._id;
-         var inviteUrl = 'https://meet.jit.si/' + to._id;
-        console.log(to);
-         var inviteData = {
-          sender: from,
-          receiver: to,
-          link: inviteUrl
-        }
-        console.log('inviteUrl: ', inviteUrl);
-        console.log('vcInviteReceived should be emitted on next line');
-        Socket.emit('vcInviteReceived', inviteData);
-        console.log('RoomName: ' + roomName);
-      }
-
-      Socket.on('beacon', function(){
-        console.log('socket.io is working');
-      })
-
-      Socket.on('triggerInvite', function(inviteData){
-        console.log('triggerInvite was triggered');
-        hc.inviteReceived = true;
-        hc.invitation = inviteData;
-        console.log(hc.invitation);
-      });
-
-      hc.inviteDenied = function() {
-        hc.inviteReceived = false;
-      };
 
       hc.grammar = '#JSGF V1.0; grammar userNames; public <userName> = ' + hc.userNames.join(' | ') + ' ;'
       hc.buildPager();
