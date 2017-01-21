@@ -50,7 +50,7 @@ angular.module('Yakkee')
       })
 
       Socket.on('triggerInvite', function(inviteData){
-        console.log(inviteData);
+        console.log('triggerInvite was triggered');
         hc.inviteReceived = true;
         hc.invitation = inviteData;
         console.log(hc.invitation);
