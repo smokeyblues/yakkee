@@ -127,6 +127,7 @@ io.on('connection', function(socket) {
     console.log(`An invite to ${inviteData.link} was sent to ${inviteData.receiver.firstName} ${inviteData.receiver.lastName}, line 127 of server.js`);
     socket.join(inviteeRoom);
     socket.broadcast.to(inviteeRoom).emit('triggerInvite', inviteData);
+    console.log('triggerInvite should have been emitted');
   });
 
   socket.on('bye', function(){
