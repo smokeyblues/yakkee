@@ -24,6 +24,7 @@ module.exports = {
 
     yakker.save((err, doc)=>{
       if (err) {
+        console.log('failed to save user');
         return res.send(err);
       }
       req.session.userID = doc._id
