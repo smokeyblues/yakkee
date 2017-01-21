@@ -37,6 +37,10 @@ angular.module('Yakkee')
       console.log(hc.invitation);
     });
 
+    hc.inviteAccepted =function(rsvp) {
+      console.log('Invite from ' + rsvp.sender.firstName + ' ' + rsvp.sender.lastName + ' ' rsvp.receiver.firstName + ' ' + rsvp.receiver.lastName + ' was sent');
+    }
+
     hc.inviteDenied = function() {
       hc.inviteReceived = false;
     };
