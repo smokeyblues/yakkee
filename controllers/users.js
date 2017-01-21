@@ -24,12 +24,14 @@ module.exports = {
     console.log(`file passed from create user: `, req);
     console.log(`req.files.files: `, req.files.files);
 
-    // fs.writeFileSync('/public/images/profile-pics', file, function(err){
-    //   if (err) {
-    //     return console.log(`fs.writeFileSync error: `, err);
-    //   }
-    // });
+    var fp = '/images/profile-pics/'+file.originalFilename
 
+    fs.writeFileSync('./public' + fp, file, function(err){
+      if (err) {
+        return console.log(`fs.writeFileSync error: `, err);
+      }
+    });
+    req.body.data.profileImg = fp
     var yakker = new User(req.body.data);
     console.log(req.files.file);
 
