@@ -21,6 +21,7 @@ module.exports = {
     // Creating registering a new user
 
     var yakker = new User(req.body.data);
+    console.log(req.body);
 
     yakker.save((err, doc)=>{
       if (err) {
