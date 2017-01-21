@@ -70,6 +70,7 @@ Routes(app);
 
 var io = socketIO.listen(httpsServer);
 io.on('connection', function(socket) {
+  console.log('Heyyyy!!!');
 
   // convenience function to log server messages on the client
   function log() {
