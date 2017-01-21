@@ -1,9 +1,9 @@
 angular.module('Yakkee')
   .controller('signinController', signinController);
 
-  signinController.$inject = ['$http', 'Auth', '$location'];
+  signinController.$inject = ['$http', 'Auth', '$location', 'Socket'];
 
-  function signinController($http, Auth, $location) {
+  function signinController($http, Auth, $location, Socket) {
     var sc = this;
 
     sc.Auth = Auth;
@@ -14,8 +14,10 @@ angular.module('Yakkee')
           console.log('signin controller says: ', 'SIGNIN : ', returnData );
           if (returnData.data._id) {
             console.log('The if statement in the signin function was tripped');
-            Auth.user = returnData.data
-            $location.url('/dashboard')
+            Auth.user = returnData.data;
+            Socket.connect();
+            Socket.emit('signedIn', Auth.user);
+            $location.url('/dashboard');
           }
         });
     }
