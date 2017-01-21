@@ -73,7 +73,7 @@ io.on('connection', function(socket) {
   console.log(`Socket 'connection' event triggered`);
   socket.on('signedIn', function (user) {
     console.log(`'signedIn' event was triggered`);
-    var roomName = user._id;
+    var roomName = 'room' + user._id;
     console.log('roomName', roomName);
     socket.join(roomName);
     console.log(`${user.displayName} joined ${roomName}`);
