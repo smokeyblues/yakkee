@@ -40,7 +40,7 @@ angular.module('Yakkee')
       });
     });
 
-    hc.inviteAccepted =function(rsvp) {
+    hc.inviteAccepted = function(rsvp) {
       console.log('Invite from ' + rsvp.sender.firstName + ' ' + rsvp.sender.lastName + ' ' + rsvp.receiver.firstName + ' ' + rsvp.receiver.lastName + ' was accepted' );
     }
 
