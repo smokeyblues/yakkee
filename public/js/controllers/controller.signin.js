@@ -8,6 +8,7 @@ angular.module('Yakkee')
 
     sc.Auth = Auth;
     sc.signin = function(){
+      Socket.connect();
       $http
         .post('/api/users/login', sc.signinUser)
         .then(function(returnData){
@@ -15,7 +16,6 @@ angular.module('Yakkee')
           if (returnData.data._id) {
             console.log('The if statement in the signin function was tripped');
             Auth.user = returnData.data;
-            Socket.connect();
             Socket.emit('signedIn', Auth.user);
             $location.url('/dashboard');
           }
