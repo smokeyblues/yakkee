@@ -1,6 +1,7 @@
 //require model
 var User = require('../models/user');
 var bcrypt = require('bcryptjs');
+var fs = require('fs');
 
 //Export route handlers
 module.exports = {
@@ -19,9 +20,17 @@ module.exports = {
 
   create : (req, res)=>{
     // Creating registering a new user
+    var file = req.files.file;
+    console.log(`file passed from create user: `, req.files.file);
+
+    // fs.writeFileSync('/public/images/profile-pics', file, function(err){
+    //   if (err) {
+    //     return console.log(`fs.writeFileSync error: `, err);
+    //   }
+    // });
 
     var yakker = new User(req.body.data);
-    console.log(req.body);
+    console.log(req.files.file);
 
     yakker.save((err, doc)=>{
       if (err) {
