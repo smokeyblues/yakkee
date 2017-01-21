@@ -123,6 +123,7 @@ io.on('connection', function(socket) {
   socket.on('vcInviteReceived', function(inviteData) {
     console.log('vcInviteReceived was triggered');
     var inviteeRoom = `room${inviteData.receiver._id}`
+    console.log(inviteeRoom);
     var inviterMessage = `Hi from ${inviteData.sender.firstName} ${inviteData.sender.lastName}`
     console.log(`An invite to ${inviteData.link} was sent to ${inviteData.receiver.firstName} ${inviteData.receiver.lastName}, line 127 of server.js`);
     socket.join(inviteeRoom);
