@@ -10,6 +10,7 @@ angular.module('Yakkee')
     hc.inviteReceived = false;
 
     hc.sendInvite = function (to, from) {
+      console.log(`'sendInvite' function was triggered`);
       console.log(from.firstName + ' ' + from.lastName + ' to ' + to.firstName + ' ' + to.lastName);
        var roomName = 'room' + to._id;
        var inviteUrl = 'https://meet.jit.si/' + to._id;
