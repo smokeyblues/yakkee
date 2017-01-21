@@ -2,7 +2,7 @@ var Users = require('./controllers/users');
 var User = require('./models/user');
 var Middleware = require('./middleware');
 var mongoose = require('mongoose');
-var multiparty = require('connect-multiparty');
+var multiparty = require('connect-multiparty')();
 
 module.exports = (app)=>{
   app.get('/', (req, res)=>{
