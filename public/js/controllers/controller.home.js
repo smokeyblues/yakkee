@@ -40,14 +40,14 @@ angular.module('Yakkee')
       });
     });
 
-    Socket.on('yourInviteWasAccepted', function(rsvpReturned) {
-      $location.url('/video-yak/' + rsvpReturned.sender._id + '_' + rsvpReturned.receiver._id)
+    Socket.on('hcYourInviteWasAccepted', function(rsvpReturned) {
+      $location.url('/video-yak/' + rsvpReturned.sender._id + '_' + rsvpReturned.receiver._id);
     })
 
     hc.inviteAccepted = function(rsvp) {
       console.log('Invite from ' + rsvp.sender.firstName + ' ' + rsvp.sender.lastName + ' ' + rsvp.receiver.firstName + ' ' + rsvp.receiver.lastName + ' was accepted');
       hc.inviteReceived = false;
-      Socket.broadcast.to('room' + rsvp.sender._id).emit('yourInviteWasAccepted', rsvp);
+      Socket.broadcast.emit('yourInviteWasAccepted', rsvp);
       $location.url('/video-yak/' + rsvp.sender._id + '_' + rsvp.receiver._id)
     }
 

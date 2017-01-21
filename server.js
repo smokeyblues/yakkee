@@ -140,6 +140,10 @@ io.on('connection', function(socket) {
     console.log(`triggerInvite to ${inviteData.receiver.firstName} ${inviteData.receiver.lastName} should have been emitted`);
   });
 
+  socket.on('yourInviteWasAccepted', function(rsvp) {
+    socket.broadcast.to('room' + rsvp.sender._id).emit('hcYourInviteWasAccepted', rsvp);
+  });
+
   socket.on('bye', function(){
     console.log('received bye');
   });
