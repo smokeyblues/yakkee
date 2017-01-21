@@ -69,7 +69,7 @@ app.use(
 Routes(app);
 
 var io = socketIO.listen(httpsServer);
-io.sockets.on('connection', function(socket) {
+io.on('connection', function(socket) {
 
   // convenience function to log server messages on the client
   function log() {

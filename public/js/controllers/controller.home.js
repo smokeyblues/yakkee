@@ -9,20 +9,6 @@ angular.module('Yakkee')
 
     hc.inviteReceived = false;
 
-    hc.sendInvite = function (to, from) {
-      console.log(from.displayName, 'to', to.displayName);
-      var roomName = 'room' + to._id;
-      var inviteUrl = 'https://yakkee.com/' + from._id //firstName + from.lastName + 'meets' + to.firstName + to.lastName
-      console.log(to);
-      var inviteData = {
-        sender: from,
-        receiver: to,
-        link: inviteUrl
-      }
-      Socket.emit('vcInviteReceived', inviteData);
-      console.log('RoomName: ' + roomName);
-    }
-
     Socket.on('triggerInvite', function(inviteData){
       console.log(inviteData);
       hc.inviteReceived = true;
