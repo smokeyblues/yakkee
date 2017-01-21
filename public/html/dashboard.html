@@ -35,7 +35,7 @@
             <span class="card-title activator grey-text text-darken-4">{{user.firstName}} {{user.lastName}}<i class="material-icons right">close</i></span>
             <div class="row">
               <a href="#">
-                <div class="col s4 card-icon">
+                <div class="col s4 card-icon" ng-click="hc.sendInvite(user, hc.Auth.user)">
                   <h3>Video Yak</h3>
                   <i class="fa fa-video-camera fa-4x" aria-hidden="true"></i>
                 </div>
