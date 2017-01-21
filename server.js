@@ -70,15 +70,15 @@ Routes(app);
 
 var io = socketIO.listen(httpsServer);
 io.on('connection', function(socket) {
-  console.log(`Socket 'connection' event triggered by user ${user.userName}`);
-  socket.on('signedIn', function (user) {
-    var roomName = user._id;
-    console.log(roomName);
-    socket.join(roomName);
-    console.log(`${user.displayName} joined ${roomName}`);
-    console.log("All Rooms: ");
-    console.log(io.nsps['/'].adapter.rooms);
-  });
+  console.log(`Socket 'connection' event triggered`);
+  // socket.on('signedIn', function (user) {
+  //   var roomName = user._id;
+  //   console.log(roomName);
+  //   socket.join(roomName);
+  //   console.log(`${user.displayName} joined ${roomName}`);
+  //   console.log("All Rooms: ");
+  //   console.log(io.nsps['/'].adapter.rooms);
+  // });
 
   // convenience function to log server messages on the client
   function log() {
