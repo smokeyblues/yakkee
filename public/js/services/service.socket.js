@@ -6,6 +6,7 @@ angular.module('Yakkee').service('Socket', ['Auth', '$timeout',
     // Connect to Socket.io server
     this.connect = function () {
       // Connect only when authenticated
+      console.log('AURH USER', Auth.user)
       if (Auth.user) {
         this.socket = io();
         // or is this where socket should notify server of online status -- my note
