@@ -120,6 +120,7 @@ io.sockets.on('connection', function(socket) {
   });
 
   socket.on('vcInviteReceived', function(inviteData) {
+    console.log('vcInviteReceived was triggered');
     var inviteeRoom = `room${inviteData.receiver._id}`
     var inviterMessage = `Hi from ${inviteData.sender.firstName} ${inviteData.sender.lastName}`
     console.log(`An invite to ${inviteData.link} was sent to ${inviteData.receiver.firstName} ${inviteData.receiver.lastName}, line 117 of config/lib/socket.io.js`);
