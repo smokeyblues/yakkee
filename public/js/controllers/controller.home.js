@@ -33,6 +33,7 @@ angular.module('Yakkee')
     Socket.on('triggerInvite', function(inviteData){
       console.log('triggerInvite was triggered');
       hc.inviteReceived = true;
+      console.log('inviteReceived is now set to ', hc.inviteReceived);
       hc.invitation = inviteData;
       console.log(hc.invitation);
     });
