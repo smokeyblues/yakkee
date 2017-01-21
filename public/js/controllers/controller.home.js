@@ -41,7 +41,8 @@ angular.module('Yakkee')
     });
 
     hc.inviteAccepted = function(rsvp) {
-      console.log('Invite from ' + rsvp.sender.firstName + ' ' + rsvp.sender.lastName + ' ' + rsvp.receiver.firstName + ' ' + rsvp.receiver.lastName + ' was accepted' );
+      console.log('Invite from ' + rsvp.sender.firstName + ' ' + rsvp.sender.lastName + ' ' + rsvp.receiver.firstName + ' ' + rsvp.receiver.lastName + ' was accepted');
+      $location.url('/video-yak/' + rsvp.sender._id + '_' + rsvp.receiver._id)
     }
 
     hc.inviteDenied = function() {
