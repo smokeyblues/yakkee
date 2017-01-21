@@ -54,9 +54,9 @@ angular.module('Yakkee')
           link: inviteUrl
         }
         console.log('inviteUrl: ', inviteUrl);
+        console.log('vcInviteReceived should be emitted on next line');
         Socket.emit('vcInviteReceived', inviteData);
         console.log('RoomName: ' + roomName);
-
       }
 
       Socket.on('beacon', function(){
