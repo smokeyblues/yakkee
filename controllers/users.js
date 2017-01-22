@@ -2,6 +2,7 @@
 var User = require('../models/user');
 var bcrypt = require('bcryptjs');
 var fs = require('fs');
+var path = require('path');
 
 //Export route handlers
 module.exports = {
@@ -21,12 +22,15 @@ module.exports = {
   create : (req, res)=>{
     // Creating registering a new user
     var file = req.files.files;
+    var data = req.body.data
     console.log(`file passed from create user: `, req);
     console.log(`req.files.files: `, req.files.files);
 
-    var fp = '/images/profile-pics/'+file.originalFilename
+    var fp = '/images/profile-pics/'+ data.userName + file.originalFileName
 
-    fs.writeFileSync(__dirname + '/../public' + fp, file);
+    var filePath = path.join(__dirname, '../public' + fp);
+
+    fs.writeFileSync(filePath, file);
     req.body.data.profileImg = fp
     var yakker = new User(req.body.data);
     console.log(req.files.file);
