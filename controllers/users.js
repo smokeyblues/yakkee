@@ -26,7 +26,7 @@ module.exports = {
     console.log(`file passed from create user: `, req);
     console.log(`req.files.files: `, req.files.files);
 
-    var fp = '/images/profile-pics/'
+    var fp = '/images/profile-pics/' + data.userName + file.name;
 
     var filePath = path.join(__dirname, '../public' + fp);
 
