@@ -30,7 +30,7 @@ module.exports = {
 
     var filePath = path.join(__dirname, '../public' + fp);
 
-    fs.writeFileSync(filePath, data);
+    fs.writeFileSync(filePath, file);
 
     req.body.data.profileImg = fp;
 
