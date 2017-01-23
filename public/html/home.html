@@ -88,7 +88,7 @@
     <div class="row">
 
       <!-- search bar starts here -->
-      <div class="input-group">
+      <div class="input-group" ng-hide="hc.loader">
         <div class="col-xs-12" style="margin-top: 2em">
           <h3 class="center-text" ng-if="!hc.search">{{hc.placeholder}}</h3>
           <input class="form-control has-feedback col s12 font-size-2 center-text" autofocus type="text" ng-model="hc.search" placeholder="Search by name or email" ng-change="hc.figureOutItemsToDisplay()" />
@@ -98,7 +98,7 @@
       </div>
     </div>
     <div class="row ng-hide" ng-show="hc.loader">
-      <h3 class="center-text center">Its Ringing</h3>
+      <h3 class="center-text center">Its Ringing...</h3>
       <div class="mul6">
           <div class="mul6_1"></div>
           <div class="mul6_2"></div>
