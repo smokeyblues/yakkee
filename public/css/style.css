@@ -22,7 +22,7 @@ nav .brand-logo {
 }
 
 .thumbnail {
-  border-radius: 5px;
+  border-radius: 25px;
   max-height: 5vh;
   max-width: 5vw;
 }
