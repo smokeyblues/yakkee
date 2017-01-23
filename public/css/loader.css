@@ -1,7 +1,8 @@
    .mul6 {
-      height: 30px;
-      width: 30px;
+      height: 15vh;
+      width: 15vw;
       position: relative;
+      margin: auto;
    }
 
    .mul6_1 {
