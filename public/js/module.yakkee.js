@@ -38,4 +38,9 @@ function Router ($routeProvider, $locationProvider) {
       controller    : 'vcController',
       controllerAs  : 'vc'
     })
+    // .when('/myprofile', {
+    //   templateUrl   : '/html/myprofile.html',
+    //   controller    : 'profieController',
+    //   controllerAs  : 'prfileCtrl'
+    // })
 }
