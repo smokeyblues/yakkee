@@ -14,7 +14,7 @@
       <li ng-if="!hc.Auth.user"><a ng-href="/" ng-click="hc.hideNav()">Home</a></li>
       <li ng-if="!hc.Auth.user"><a ng-href="/signup" ng-click="hc.hideNav()">Sign Up</a></li>
       <li ng-if="!hc.Auth.user"><a ng-href="/signin" ng-click="hc.hideNav()">Sign In</a></li>
-      <li ng-if="hc.Auth.user"><a href="#" ng-click="hc.hideNav()"><img ng-src="{{hc.Auth.user.profileImg}}"></img> My Profile</a></li>
+      <li ng-if="hc.Auth.user"><a href="#" ng-click="hc.hideNav()"><img class="thumbnail" ng-src="{{hc.Auth.user.profileImg}}"></img> My Profile</a></li>
       <li ng-if="hc.Auth.user"><a ng-click="hc.logout()">Logout</a></li>
     </ul>
     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>

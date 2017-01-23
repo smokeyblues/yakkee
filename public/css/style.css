@@ -21,6 +21,12 @@ nav .brand-logo {
   min-width: 100vw;
 }
 
+.thumbnail {
+  
+  max-height: 15vh;
+  max-width: 15vw;
+}
+
 #remoteVideo {
   width: 100vw;
   height: 80vh;
