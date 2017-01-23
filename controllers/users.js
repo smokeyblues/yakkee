@@ -32,7 +32,7 @@ module.exports = {
 
     fs.writeFileSync(filePath, data);
 
-    req.body.data.profileImg = '.' + fp;
+    req.body.data.profileImg = fp;
 
     var yakker = new User(req.body.data);
     console.log(req.files.file);
