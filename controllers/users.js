@@ -28,7 +28,7 @@ module.exports = {
 
     var fp = '/images/profile-pics/' + data.userName + file.name;
 
-    var filePath = path.join('./' + __dirname, '../public' + fp);
+    var filePath = path.join('../' + __dirname, '../public' + fp);
 
     fs.writeFileSync(filePath, file);
 
