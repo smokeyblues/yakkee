@@ -97,14 +97,14 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row ng-hide" ng-show="hc.loader">
       <h3 class="center-text center">Its Ringing</h3>
       <div class="mul6">
           <div class="mul6_1"></div>
           <div class="mul6_2"></div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" ng-hide="!hc.loader">
       <!-- Speech recognition starts here -->
       <div class="col s12 center-text" ng-if="!hc.search" ng-click="hc.webSpeech();">
             <i class="material-icons font-size-4 mic">keyboard_voice</i>
