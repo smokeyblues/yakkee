@@ -43,8 +43,10 @@ angular.module('Yakkee')
     });
 
     Socket.on('hcYourInviteWasAccepted', function(rsvpReturned) {
-      hc.loader = false;
-      $location.url('/video-yak/' + rsvpReturned.sender._id + '_' + rsvpReturned.receiver._id);
+      $scope.$apply(function() {
+        hc.loader = false;
+        $location.url('/video-yak/' + rsvpReturned.sender._id + '_' + rsvpReturned.receiver._id);
+      })
     })
 
     hc.inviteAccepted = function(rsvp) {
