@@ -113,7 +113,7 @@
 
     <!-- <pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage" ng-change="pageChanged()" class="pagination">
     </pagination> -->
-    <div class="list-group ng-hide" ng-show="hc.search" ng-hide="!hc.loader" align="center">
+    <div class="list-group ng-hide" ng-show="hc.search" ng-if="!hc.loader" align="center">
       <li ng-repeat="user in hc.pagedSearchItems" class="list-group-item" align="center">
         <div class="card indigo lighten-5  m4 offset-m4">
           <div class="row">
