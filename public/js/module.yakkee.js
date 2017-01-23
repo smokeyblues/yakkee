@@ -28,11 +28,11 @@ function Router ($routeProvider, $locationProvider) {
       controller    : 'signinController',
       controllerAs  : 'sc'
     })
-    .when('/dashboard', {
-      templateUrl   : '/html/dashboard.html',
-      controller    : 'homeController',
-      controllerAs  : 'hc'
-    })
+    // .when('/dashboard', {
+    //   templateUrl   : '/html/dashboard.html',
+    //   controller    : 'homeController',
+    //   controllerAs  : 'hc'
+    // })
     .when('/video-yak/:videoRoomID', {
       templateUrl   : '/html/videochat.html',
       controller    : 'vcController',

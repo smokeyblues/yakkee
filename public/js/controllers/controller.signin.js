@@ -17,7 +17,7 @@ angular.module('Yakkee')
             console.log('The if statement in the signin function was tripped');
             Auth.user = returnData.data;
             Socket.emit('signedIn', Auth.user);
-            $location.url('/dashboard');
+            $location.url('/');
           }
         });
     }

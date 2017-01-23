@@ -3,14 +3,14 @@
     <a id="logo-container" href="/" class="brand-logo">Yakkee</a>
     <ul class="right hide-on-med-and-down brand-logo">
       <li ng-if="!hc.Auth.user"><a ng-href="/" ng-click="hc.hideNav()">Home</a></li>
-      <li ng-if="hc.Auth.user"><a ng-href="/dashboard" ng-click="hc.hideNav()">Home</a></li>
+      <li ng-if="hc.Auth.user"><a ng-href="/" ng-click="hc.hideNav()">Home</a></li>
       <li ng-if="!hc.Auth.user"><a ng-href="/signup">Sign Up</a></li>
       <li ng-if="!hc.Auth.user"><a ng-href="/signin">Sign In</a></li>
       <li ng-if="hc.Auth.user"><a ng-click="hc.logout()">Logout</a></li>
     </ul>
 
     <ul id="nav-mobile" class="side-nav">
-      <li ng-if="hc.Auth.user"><a ng-href="/dashboard" ng-click="hc.hideNav()">Home</a></li>
+      <li ng-if="hc.Auth.user"><a ng-href="/" ng-click="hc.hideNav()">Home</a></li>
       <li ng-if="!hc.Auth.user"><a ng-href="/" ng-click="hc.hideNav()">Home</a></li>
       <li ng-if="!hc.Auth.user"><a ng-href="/signup" ng-click="hc.hideNav()">Sign Up</a></li>
       <li ng-if="!hc.Auth.user"><a ng-href="/signin" ng-click="hc.hideNav()">Sign In</a></li>
