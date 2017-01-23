@@ -6,8 +6,8 @@
    }
 
    .mul6_1 {
-      height: 15vh;
-      width: 15vw;
+      height: 5vh;
+      width: 5vw;
       border-radius: 50%;
       position: absolute;
       -webkit-animation: mul6_1anim 4s infinite linear;
