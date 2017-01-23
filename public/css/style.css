@@ -22,9 +22,9 @@ nav .brand-logo {
 }
 
 .thumbnail {
-  
-  max-height: 15vh;
-  max-width: 15vw;
+
+  max-height: 5vh;
+  max-width: 5vw;
 }
 
 #remoteVideo {
