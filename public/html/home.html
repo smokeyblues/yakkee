@@ -104,7 +104,7 @@
           <div class="mul6_2"></div>
         </div>
     </div>
-    <div class="row" ng-hide="!hc.loader">
+    <div class="row" ng-show="!hc.loader">
       <!-- Speech recognition starts here -->
       <div class="col s12 center-text" ng-if="!hc.search" ng-click="hc.webSpeech();">
             <i class="material-icons font-size-4 mic">keyboard_voice</i>
@@ -162,7 +162,7 @@
           {{hc.invitation.sender.firstName}} {{hc.invitation.sender.lastName}} has invited you to video chat. Do you want to accept {{hc.invitation.sender.firstName}}'s invitation?
           <div class="btn-group-justified">
             <button class="btn-lg btn-info" type="button" name="button" ng-click="hc.inviteAccepted(hc.invitation);"><a href="#">Yes</a></button>
-            <button class="btn-lg btn-danger" type="button" name="button" ng-click="hc.inviteDenied();">NO</button> 
+            <button class="btn-lg btn-danger" type="button" name="button" ng-click="hc.inviteDenied();">NO</button>
           </div>
         </div>
       </div>
