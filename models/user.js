@@ -40,8 +40,8 @@ var UserSchema = mongoose.Schema({
     default   : '/images/default.png'
   },
   memberSince : {
-    type      : Date,
-    default   : Date.now
+    type      : Number,
+    default   : () => Date.now();
   },
   family      : {
     type      : mongoose.Schema.ObjectId,
