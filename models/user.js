@@ -41,7 +41,7 @@ var UserSchema = mongoose.Schema({
   },
   memberSince : {
     type      : Number,
-    default   : () => Date.now();
+    default   : () => Date.now()
   },
   family      : {
     type      : mongoose.Schema.ObjectId,
