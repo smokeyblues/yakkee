@@ -8,9 +8,11 @@ angular.module('Yakkee')
     hc.placeholder = "With whom would you care to Yak?"
 
     hc.inviteReceived = false;
+    hc.loader = false;
 
     hc.sendInvite = function (to, from) {
       console.log(`'sendInvite' function was triggered`);
+      hc.loader = true;
       console.log(from.firstName + ' ' + from.lastName + ' to ' + to.firstName + ' ' + to.lastName);
        var roomName = 'room' + to._id;
        var inviteUrl = 'https://meet.jit.si/' + to._id;
@@ -41,6 +43,7 @@ angular.module('Yakkee')
     });
 
     Socket.on('hcYourInviteWasAccepted', function(rsvpReturned) {
+      hc.loader = false;
       $location.url('/video-yak/' + rsvpReturned.sender._id + '_' + rsvpReturned.receiver._id);
     })
 
