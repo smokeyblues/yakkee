@@ -148,6 +148,7 @@ angular.module('Yakkee')
         //   console.log('$location: ', $location);
         //   $location.url('/dashboard');
         // }
+        Socket.emit('signedIn', hc.Auth.user);
       })
 
     hc.logout = function() {
