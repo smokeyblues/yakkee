@@ -1,145 +1,127 @@
- .mult2rect {
-    height: 30px;
-    width: 7px;
-    margin: 0 2px;
- }
+   .mul6 {
+      height: 30px;
+      width: 30px;
+      position: relative;
+   }
 
- .mult2rect1 {
-    background-color: #F5D76E;
-    -webkit-animation: mult2rect1 3s infinite linear;
-    animation: mult2rect1 3s infinite linear;
- }
+   .mul6_1 {
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      position: absolute;
+      -webkit-animation: mul6_1anim 4s infinite linear;
+      animation: mul6_1anim 4s infinite linear;
+   }
 
- @-webkit-keyframes mult2rect1 {
-    0%, 10%, 70%, 80%, 100% {
-       -webkit-transform: scaleY(1);
-       transform: scaleY(1);
-    }
-    5%, 75% {
-       -webkit-transform: scaleY(2);
-       transform: scaleY(2);
-    }
- }
+   .mul6_2 {
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      position: absolute;
+      -webkit-animation: mul6_2anim 4s infinite linear;
+      a   nimation: mul6_2anim 4s infinite linear;
+   }
 
- @keyframes mult2rect1 {
-    0%, 10%, 70%, 80%, 100% {
-       -webkit-transform: scaleY(1);
-       transform: scaleY(1);
-    }
-    5%, 75% {
-       -webkit-transform: scaleY(2);
-       transform: scaleY(2);
-    }
- }
+   @-webkit-keyframes mul6_1anim {
+      0%, 20%, 100% {
+         -we   bkit-transform: translate(-6px, -6px);
+         transform: translate(-6px, -6px);
+         background-color: #F5D76E;
+      }
 
- .mult2rect2 {
-    background-color: #F4D03F;
-    -webkit-animation: mult2rect2 3s infinite linear;
-    animation: mult2rect2 3s infinite linear;
- }
+      25%, 45% {
+         -webkit-transform: translate(24px, -6px);
+         transform: translate(24px, -6px);
+         background-color: #4183D7;
+      }
 
- @-webkit-keyframes mult2rect2 {
-    0%, 5%, 15%,  65%, 75%, 100% {
-       -webkit-transform: scaleY(1);
-       transform: scaleY(1);
-    }
-    10%, 70% {
-       -webkit-transform: scaleY(2);
-       transform: scaleY(2);
-    }
- }
+      50%, 70% {
+         -webkit-transform: translate(24px, 24px);
+         transform: translate(24px, 24px);
+         background-color: #D64541;
+      }
 
- @keyframes mult2rect2 {
-    0%, 5%, 15%,  65%, 75%, 100% {
-       -webkit-transform: scaleY(1);
-       transform: scaleY(1);
-    }
-    10%, 70% {
-       -webkit-transform: scaleY(2);
-       transform: scaleY(2);
-    }
- }
+      75%, 95% {
+         -webkit-transform: translate(-6px, 24px);
+         transform: translate(-6px, 24px);
+         background-color: #26A65B;
+      }
+   }
 
- .mult2rect3 {
-    background-color: #EB9532;
-    -webkit-animation: mult2rect3 3s infinite linear;
-    animation: mult2rect3 3s infinite linear;
- }
+   @keyframes mul6_1anim {
+      0%, 20%, 100% {
+         -webkit-transform: translate(-6px, -6px);
+         transform: translate(-6px, -6px);
+         background-color: #F5D76E;
+      }
 
- @-webkit-keyframes mult2rect3 {
-    0%, 10%, 20%, 60%, 70%, 100% {
-       -webkit-transform: scaleY(1);
-       transform: scaleY(1);
-    }
-    15%, 65% {
-       -webkit-transform: scaleY(2);
-       transform: scaleY(2);
-    }
- }
+      25%, 45% {
+         -webkit-transform: translate(24px, -6px);
+         transform: translate(24px, -6px);
+         background-color: #4183D7;
+      }
 
- @keyframes mult2rect3 {
-    0%, 10%, 20%, 60%, 70%, 100% {
-       -webkit-transform: scaleY(1);
-       transform: scaleY(1);
-    }
-    15%, 65% {
-       -webkit-transform: scaleY(2);
-       transform: scaleY(2);
-    }
- }
+      50%, 70% {
+         -webkit-transform: translate(24px, 24px);
+         transform: translate(24px, 24px);
+         background-color: #D64541;
+      }
 
- .mult2rect4 {
-    background-color: #EC644B;
-    -webkit-animation: mult2rect4 3s infinite linear;
-    animation: mult2rect4 3s infinite linear;
- }
+      75%, 95% {
+         -webkit-transform: translate(-6px, 24px);
+         transform: translate(-6px, 24px);
+         background-color: #26A65B;
+      }
+   }
 
- @-webkit-keyframes mult2rect4 {
-    0%, 15%, 25%, 55%, 65%, 100% {
-       -webkit-transform: scaleY(1);
-       transform: scaleY(1);
-    }
-    20%, 60% {
-       -webkit-transform: scaleY(2);
-       transform: scaleY(2);
-    }
- }
+   @-webkit-keyframes mul6_2anim {
+      0%, 20%, 100% {
+         -webkit-transform: translate(24px, 24px);
+         transform: translate(24px, 24px);
+         background-color: #D64541;
+      }
 
- @keyframes mult2rect4 {
-    0%, 15%, 25%, 55%, 65%, 100% {
-       -webkit-transform: scaleY(1);
-       transform: scaleY(1);
-    }
-    20%, 60% {
-       -webkit-transform: scaleY(2);
-       transform: scaleY(2);
-    }
- }
+      25%, 45% {
+         -webkit-transform: translate(-6px, 24px);
+         transform: translate(-6px, 24px);
+         background-color: #26A65B;
+      }
 
- .mult2rect5 {
-    background-color: #C0392B;
-    -webkit-animation: mult2rect5 3s infinite linear;
-    animation: mult2rect5 3s infinite linear;
- }
+      50%, 70% {
+         -webkit-transform: translate(-6px, -6px);
+         transform: translate(-6px, -6px);
+         background-color: #F5D76E;
+      }
 
- @-webkit-keyframes mult2rect5 {
-    0%, 20%, 30%, 50%, 60%, 100% {
-       -webkit-transform: scaleY(1);
-       transform: scaleY(1);
-    }
-    25%, 55% {
-       -webkit-transform: scaleY(2);
-       transform: scaleY(2);
-    }
- }
+      75%, 95% {
+         -webkit-transform: translate(24px, -6px);
+         transform: translate(24px, -6px);
+         background-color: #4183D7;
+      }
+   }
 
- @keyframes mult2rect5 {
-    0%, 20%, 30%, 50%, 60%, 100% {
-       -webkit-transform: scaleY(1);
-       transform: scaleY(1);
-    }
-    25%, 55% {
-       -webkit-transform: scaleY(2);
-       transform: scaleY(2);
-    }
- }
+   @keyframes mul6_2anim {
+      0%, 20%, 100% {
+         -webkit-transform: translate(24px, 24px);
+         transform: translate(24px, 24px);
+         background-color: #D64541;
+      }
+
+      25%, 45% {
+         -webkit-transform: translate(-6px, 24px);
+         transform: translate(-6px, 24px);
+         background-color: #26A65B;
+      }
+
+      50%, 70% {
+         -webkit-transform: translate(-6px, -6px);
+         transform: translate(-6px, -6px);
+         background-color: #F5D76E;
+      }
+
+      75%, 95% {
+         -webkit-transform: translate(24px, -6px);
+         transform: translate(24px, -6px);
+         background-color: #4183D7;
+      }
+   }
