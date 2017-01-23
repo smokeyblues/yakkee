@@ -24,13 +24,13 @@ module.exports = {
     var file = req.files.files;
     var data = req.body.data
     // console.log(`file passed from create user: `, req);
-    console.log(`req.files.files: `, req.files.files);
+    console.log(`req.files: `, req.files);
 
     var fp = '/images/profile-pics/' + data.userName + file.name;
 
     var filePath = path.join(__dirname, '../public' + fp);
 
-    fs.writeFileSync(filePath, file.path);
+    fs.writeFileSync(filePath, file);
 
     req.body.data.profileImg = fp;
 
