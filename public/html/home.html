@@ -158,11 +158,11 @@
 
     <div class="row">
       <div class="col-xs-6 pull-left">
-        <div style="box-shadow: 0px 2px 25px rgba(0, 0, 0, .25);" class="box-shadow" ng-if="hc.inviteReceived" ng-model="inviteData">
-          {{hc.invitation.sender.displayName}} has invited you to chat. Would you like to join?
+        <div style="box-shadow: 0px 2px 25px rgba(0, 0, 0, .25);" class="box-shadow" ng-if="hc.inviteReceived" ng-model="hc.inviteData">
+          {{hc.invitation.sender.firstName}} {{hc.invitation.sender.lastName}} has invited you to video chat. Do you want to accept {{hc.invitation.sender.firstName}}'s invitation?
           <div class="btn-group-justified">
-            <button class="btn-lg btn-info" type="button" name="button"><a href="{{hc.invitation.link}}">Yes</a></button>
-            <button class="btn-lg btn-danger" type="button" name="button" ng-click="inviteDenied();">NO</button>
+            <button class="btn-lg btn-info" type="button" name="button" ng-click="hc.inviteAccepted(hc.invitation);"><a href="#">Yes</a></button>
+            <button class="btn-lg btn-danger" type="button" name="button" ng-click="hc.inviteDenied();">NO</button> 
           </div>
         </div>
       </div>
