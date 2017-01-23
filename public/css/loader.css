@@ -1,128 +1,62 @@
-   .mul6 {
-      height: 15vh;
-      width: 15vw;
-      position: relative;
-      margin: auto;
+
+   .mul15 {
+      height: 14px;
+      width: 144px;
    }
 
-   .mul6_1 {
-      height: 5vh;
-      width: 5vw;
+   .m15c {
+      height: 14px;
+      width: 14px;
+      margin: 0 2px;
       border-radius: 50%;
-      position: absolute;
-      -webkit-animation: mul6_1anim 4s infinite linear;
-      animation: mul6_1anim 4s infinite linear;
+      float: left;
+      background-color: #F4D03F;
    }
 
-   .mul6_2 {
-      height: 5vh;
-      width: 5vw;
-      border-radius: 50%;
-      position: absolute;
-      -webkit-animation: mul6_2anim 4s infinite linear;
-      a   nimation: mul6_2anim 4s infinite linear;
+   .m15c1, .m15c2,
+   .m15c3, .m15c4,
+   .m15c5, .m15c6,
+   .m15c7, .m15c8 {
+      -webkit-animation: m15anim 2s infinite ease-in-out;
+      animation: m15anim 2s infinite ease-in-out;
    }
 
-   @-webkit-keyframes mul6_1anim {
-      0%, 20%, 100% {
-         -we   bkit-transform: translate(-6px, -6px);
-         transform: translate(-6px, -6px);
-         background-color: #F5D76E;
-      }
+   .m15c2 { -webkit-animation-delay: .25s; animation-delay: .25s }
 
-      25%, 45% {
-         -webkit-transform: translate(24px, -6px);
-         transform: translate(24px, -6px);
-         background-color: #4183D7;
-      }
+   .m15c3 { -webkit-animation-delay: .5s; animation-delay: .5s }
 
-      50%, 70% {
-         -webkit-transform: translate(24px, 24px);
-         transform: translate(24px, 24px);
-         background-color: #D64541;
-      }
+   .m15c4 { -webkit-animation-delay: .75s; animation-delay: .75s }
 
-      75%, 95% {
-         -webkit-transform: translate(-6px, 24px);
-         transform: translate(-6px, 24px);
-         background-color: #26A65B;
-      }
-   }
+   .m15c5 { -webkit-animation-delay: 1s; animation-delay: 1s }
 
-   @keyframes mul6_1anim {
-      0%, 20%, 100% {
-         -webkit-transform: translate(-6px, -6px);
-         transform: translate(-6px, -6px);
-         background-color: #F5D76E;
-      }
+   .m15c6 { -webkit-animation-delay: 1.25s; animation-delay: 1.25s }
 
-      25%, 45% {
-         -webkit-transform: translate(24px, -6px);
-         transform: translate(24px, -6px);
-         background-color: #4183D7;
-      }
+   .m15c7 { -webkit-animation-delay: 1.5s; animation-delay: 1.5s }
 
-      50%, 70% {
-         -webkit-transform: translate(24px, 24px);
-         transform: translate(24px, 24px);
-         background-color: #D64541;
-      }
+   .m15c8 { -webkit-animation-delay: 1.75s; animation-delay: 1.75s }
 
-      75%, 95% {
-         -webkit-transform: translate(-6px, 24px);
-         transform: translate(-6px, 24px);
-         background-color: #26A65B;
+   @-webkit-keyframes m15anim {
+      0%, 40%, 100% {
+         background-color: #F4D03F;
+         -webkit-transform: translateY(0);
+         transform: translateY(0);
+      }
+      20% {
+         background-color: #C0392B;
+         -webkit-transform: translateY(-12px);
+         transform: translateY(-12px);
       }
    }
 
-   @-webkit-keyframes mul6_2anim {
-      0%, 20%, 100% {
-         -webkit-transform: translate(24px, 24px);
-         transform: translate(24px, 24px);
-         background-color: #D64541;
+   @keyframes m15anim {
+      0%, 40%, 100% {
+         background-color: #F4D03F;
+         -webkit-transform: translateY(0);
+         transform: translateY(0);
       }
-
-      25%, 45% {
-         -webkit-transform: translate(-6px, 24px);
-         transform: translate(-6px, 24px);
-         background-color: #26A65B;
-      }
-
-      50%, 70% {
-         -webkit-transform: translate(-6px, -6px);
-         transform: translate(-6px, -6px);
-         background-color: #F5D76E;
-      }
-
-      75%, 95% {
-         -webkit-transform: translate(24px, -6px);
-         transform: translate(24px, -6px);
-         background-color: #4183D7;
-      }
-   }
-
-   @keyframes mul6_2anim {
-      0%, 20%, 100% {
-         -webkit-transform: translate(24px, 24px);
-         transform: translate(24px, 24px);
-         background-color: #D64541;
-      }
-
-      25%, 45% {
-         -webkit-transform: translate(-6px, 24px);
-         transform: translate(-6px, 24px);
-         background-color: #26A65B;
-      }
-
-      50%, 70% {
-         -webkit-transform: translate(-6px, -6px);
-         transform: translate(-6px, -6px);
-         background-color: #F5D76E;
-      }
-
-      75%, 95% {
-         -webkit-transform: translate(24px, -6px);
-         transform: translate(24px, -6px);
-         background-color: #4183D7;
+      20% {
+         background-color: #C0392B;
+         -webkit-transform: translateY(-12px);
+         transform: translateY(-12px);
       }
    }
