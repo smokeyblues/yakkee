@@ -1,10 +1,11 @@
 angular.module('Yakkee')
   .controller('homeController', homeController);
 
-  homeController.$inject = ['$scope', '$http', '$location', '$filter', 'Auth', 'User', 'Socket'];
+  homeController.$inject = ['$scope', '$http', '$location', '$filter', 'Auth', 'User', 'Socket', '$sce'];
 
-  function homeController($scope, $http, $location, $filter, Auth, User, Socket) {
+  function homeController($scope, $http, $location, $filter, Auth, User, Socket, $sce) {
     var hc = this;
+    hc.$sce = $sce;
     hc.placeholder = "With whom would you care to Yak?"
 
     hc.inviteReceived = false;
