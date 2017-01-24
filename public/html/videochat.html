@@ -1,4 +1,4 @@
 
 <iframe class="jitsi" ng-src="{{hc.$sce.trustAsResourceUrl('https://meet.jit.si/' + hc.invitation.to._id + '_' + hc.invitation.from._id)}}"></iframe>
 
-<a class="waves-effect waves-light btn-large red accent-4 hang-up"><i class="medium material-icons right">call_end</i>HANG UP</a>
+<a class="waves-effect waves-light btn-large red accent-4 hang-up" ng-click="vc.hangup();"><i class="medium material-icons right">call_end</i>HANG UP</a>
