@@ -164,10 +164,10 @@
           </div>
           <div class="card-stacked">
             <div class="card-content">
-              {{hc.invitation.sender.firstName}} {{hc.invitation.sender.lastName}} has invited you to video chat. Do you want to accept {{hc.invitation.sender.firstName}}'s invitation?
+              {{hc.invitation.sender.firstName}} {{hc.invitation.sender.lastName}} has invited you to video chat. Would you like to accept {{hc.invitation.sender.firstName}}'s invitation?
             </div>
             <div class="card-action">
-              <button class="waves-effect waves-light btn-large green white-text" type="button" name="button" ng-click="hc.inviteAccepted(hc.invitation);"><a href="#">Yes</a></button>
+              <button class="waves-effect waves-light btn-large white-text green" type="button" name="button" ng-click="hc.inviteAccepted(hc.invitation);">Yes</button>
               <button class="waves-effect waves-light btn-large red" type="button" name="button" ng-click="hc.inviteDenied();">NO</button>
             </div>
           </div>
