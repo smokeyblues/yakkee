@@ -157,12 +157,19 @@
     </div>
 
     <div class="row">
-      <div class="col-xs-6 pull-left">
-        <div style="box-shadow: 0px 2px 25px rgba(0, 0, 0, .25);" class="box-shadow" ng-if="hc.inviteReceived" ng-model="hc.inviteData">
-          {{hc.invitation.sender.firstName}} {{hc.invitation.sender.lastName}} has invited you to video chat. Do you want to accept {{hc.invitation.sender.firstName}}'s invitation?
-          <div class="btn-group-justified">
-            <button class="btn-lg btn-info" type="button" name="button" ng-click="hc.inviteAccepted(hc.invitation);"><a href="#">Yes</a></button>
-            <button class="btn-lg btn-danger" type="button" name="button" ng-click="hc.inviteDenied();">NO</button>
+      <div class="col s12 m7">
+        <div class="card horizontal" ng-if="hc.inviteReceived" ng-model="hc.inviteData">
+          <div class="card-image">
+            <img ng-src="{{hc.invitation.sender.profileImg}}" alt="">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              {{hc.invitation.sender.firstName}} {{hc.invitation.sender.lastName}} has invited you to video chat. Do you want to accept {{hc.invitation.sender.firstName}}'s invitation?
+            </div>
+            <div class="card-action">
+              <button class="waves-effect waves-light btn-large green" type="button" name="button" ng-click="hc.inviteAccepted(hc.invitation);"><a href="#">Yes</a></button>
+              <button class="waves-effect waves-light btn-large red" type="button" name="button" ng-click="hc.inviteDenied();">NO</button>
+            </div>
           </div>
         </div>
       </div>
