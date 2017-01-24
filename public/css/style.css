@@ -16,6 +16,12 @@ nav .brand-logo {
   color: #444;
 }
 
+.hang-up {
+  position: absolute;
+  bottom: 5vh;
+  left: 40vw;
+}
+
 .jitsi {
   min-height: 90vh;
   min-width: 100vw;
