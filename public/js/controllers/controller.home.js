@@ -29,6 +29,10 @@ angular.module('Yakkee')
       console.log('RoomName: ' + roomName);
     }
 
+    hc.cancelCall = function() {
+      hc.loader = false;
+    }
+
     Socket.on('beacon', function(){
       console.log('socket.io is working');
     })
