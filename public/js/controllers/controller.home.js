@@ -36,6 +36,10 @@ angular.module('Yakkee')
       Socket.emit('callCancelled', hc.cancelCallData);
     }
 
+    Socket.on('cancelInvite', function() {
+      hc.inviteReceived = !hc.inviteReceived;
+    })
+
     Socket.on('beacon', function(){
       console.log('socket.io is working');
     })

@@ -129,8 +129,10 @@ io.on('connection', function(socket) {
     }
   });
 
-  socket.on('callCancelled', function(data) {
-    console.log("callCancelled function was triggered, data returned: ", data);
+  socket.on('callCancelled', function(roomName) {
+    console.log("callCancelled function was triggered, data returned: ", roomName);
+    socket.join(roomName);
+    socket.broadcast.to(roomName).emit('cancelInvite');
   });
 
   socket.on('vcInviteReceived', function(inviteData) {
