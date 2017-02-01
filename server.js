@@ -81,6 +81,10 @@ io.on('connection', function(socket) {
     console.log(io.nsps['/'].adapter.rooms);
   });
 
+  socket.on('callCancelled', function(data) {
+    console.log("callCancelled function was triggered, data returned: ", data);
+  });
+
   // convenience function to log server messages on the client
   function log() {
     var array = ['Message from server:'];
