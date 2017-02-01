@@ -27,7 +27,7 @@ angular.module('Yakkee')
       console.log('vcInviteReceived should be emitted on next line');
       Socket.emit('vcInviteReceived', inviteData);
       console.log('RoomName: ' + roomName);
-      hc.cancelCallData = inviteData.receiver;
+      hc.cancelCallData = roomName;
     }
 
     hc.cancelCall = function() {
