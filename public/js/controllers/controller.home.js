@@ -27,13 +27,13 @@ angular.module('Yakkee')
       console.log('vcInviteReceived should be emitted on next line');
       Socket.emit('vcInviteReceived', inviteData);
       console.log('RoomName: ' + roomName);
-      hc.cancelCallData = inviteData;
+      hc.cancelCallData = inviteData.receiver;
     }
 
     hc.cancelCall = function() {
       console.log('cancelCall button is working');
       hc.loader = false;
-      Socket.emit('callCancelled', hc.cancelCallData); 
+      Socket.emit('callCancelled', hc.cancelCallData);
     }
 
     Socket.on('beacon', function(){
