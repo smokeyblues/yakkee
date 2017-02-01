@@ -33,7 +33,7 @@ angular.module('Yakkee')
     hc.cancelCall = function() {
       console.log('cancelCall button is working');
       hc.loader = false;
-      Socket.emit('callCancelled', cancelCallData); 
+      Socket.emit('callCancelled', hc.cancelCallData); 
     }
 
     Socket.on('beacon', function(){
