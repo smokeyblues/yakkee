@@ -8,8 +8,12 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     colors = require('colors'),
     morgan = require('morgan')('dev'),
+    cookieParser = require('cookie-parser'),
     socketIO = require('socket.io'),
     Routes = require('./routes'),
+    passport = require('passport'),
+    flash = require('connect-flash'),
+    session =require('express-session'),
     fs = require('fs'),
     ports = {
       http:   process.env.PORT || 80,
@@ -65,8 +69,16 @@ app.use(
   sessions
 );
 
+app.use(
+  cookieParser(),
+  session({secret: config.sessionsSecret}),
+  passport.initialize(),
+  passport.session(),
+  flash()
+)
+
 // Routes
-Routes(app);
+Routes(app, passport);
 
 var io = socketIO.listen(httpsServer);
 io.on('connection', function(socket) {
