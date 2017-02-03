@@ -6,7 +6,8 @@ var express = require('express'),
     HTTPS = require('https'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
-    colors = require('colors'),
+    passport = require('passport'),
+    sessions = require('express-session'),
     morgan = require('morgan')('dev'),
     socketIO = require('socket.io'),
     Routes = require('./routes'),
@@ -19,21 +20,29 @@ var express = require('express'),
       key:    fs.readFileSync('/etc/letsencrypt/live/yakkee.com/privkey.pem'),
       cert:   fs.readFileSync('/etc/letsencrypt/live/yakkee.com/cert.pem')
     },
-    app = express(),
-    sessions = require('client-sessions')({
-      cookieName : "0_o",
-      secret : config.sessionsSecret,
-      requestKey : "session",
-      cookie : {
-        httpOnly : true
-      }
-    });
+    app = express();
+
+    require('./config/passport');
+    // var sessions = require('client-sessions')({
+    //   cookieName : "0_o",
+    //   secret : config.sessionsSecret,
+    //   requestKey : "session",
+    //   cookie : {
+    //     httpOnly : true
+    //   }
+    // });
 
 mongoose.connect("mongodb://localhost/yakkee", (err)=>{
   if(err){
     return console.log("DB failed to connect".red, err);
   }
   console.log("mongoDB connected".cyan);
+});
+
+var sessionMiddleware = sessions({
+  secret            : config.sessionsSecret,
+  resave            : false, // resave any cookie if it doesn't change
+  saveUninitialized : true // save an empty session / cookie for EVERY user that comes to the site
 });
 
 var httpServer = HTTP.createServer( app ).listen( ports.http, ()=>{
@@ -61,8 +70,11 @@ app.use(
   express.static(`public`),
   bodyParser.json(),
   bodyParser.urlencoded({extended : true}),
-  morgan,
-  sessions
+  sessionMiddleware,
+  passport.initialize(),
+  passport.session(),
+  // sessions,
+  morgan
 );
 
 // Routes
