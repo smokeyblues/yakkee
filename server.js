@@ -22,7 +22,7 @@ var express = require('express'),
     },
     app = express();
 
-    require('./config/passport');
+    require('./config/passport-local');
     // var sessions = require('client-sessions')({
     //   cookieName : "0_o",
     //   secret : config.sessionsSecret,
