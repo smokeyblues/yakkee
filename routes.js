@@ -4,7 +4,7 @@ var Middleware = require('./middleware');
 var mongoose = require('mongoose');
 var multiparty = require('connect-multiparty')();
 
-module.exports = (app)=>{
+module.exports = (app, passport)=>{
   app.get('/', (req, res)=>{
     res.sendFile('index.html', {root : './public/html'});
   });

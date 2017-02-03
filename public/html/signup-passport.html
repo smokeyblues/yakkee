@@ -1,0 +1,68 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 center">
+        <h5 class="margin-top">Sign up with your social media account</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 center">
+        <i class="tooltipped btn btn-flat fa fa-facebook-square fa-5x facebook-icon disabled" aria-hidden="true" data-position="bottom" data-delay="100" data-tooltip="this function is coming soon!"></i>
+        <i class="tooltipped btn btn-flat fa fa-twitter fa-5x twitter-icon disabled" aria-hidden="true" data-position="bottom" data-delay="100" data-tooltip="this function is coming soon!"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 center">
+        <h5 class="margin-top">Or with your Email Account</h5>
+      </div>
+    </div>
+    <div class="row">
+      <form class="col s12" ng-submit="rc.signup()">
+        <div class="row">
+          <div class="input-field col s12 m6 hoverable">
+            <input id="first_name" type="text" class="validate" ng-model="rc.signupUser.firstName">
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s12 m6 hoverable">
+            <input id="last_name" type="text" class="validate" ng-model="rc.signupUser.lastName">
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 hoverable">
+            <input
+         type="file"
+         ng-model="rc.signupUser.profileImg"
+         ngf-accept="'image/*'"
+         ngf-pattern="'image/*'"
+         ngf-select
+         >
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6 hoverable">
+            <input id="email" type="email" class="validate" ng-model="rc.signupUser.email">
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field col s12 m6 hoverable">
+            <input id="icon_telephone" type="tel" class="validate" ng-model="rc.signupUser.phone">
+            <label for="icon_telephone">Telephone</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6 hoverable">
+            <input id="username" type="text" class="validate" ng-model="rc.signupUser.userName">
+            <label for="username">Username</label>
+          </div>
+          <div class="input-field col s12 m6 hoverable">
+            <input id="password" type="password" class="validate" ng-model="rc.signupUser.password">
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <div class="row center">
+          <button href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
