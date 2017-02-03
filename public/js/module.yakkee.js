@@ -38,6 +38,16 @@ function Router ($routeProvider, $locationProvider) {
       controller    : 'vcController',
       controllerAs  : 'vc'
     })
+    .when('signup-passport', {
+      templateUrl   : '/html/signup-passport',
+      controller    : 'passportController',
+      controllerAs  : 'passportCtrl'
+    })
+    .when('signin-passport', {
+      templateUrl   : '/html/signin-passport',
+      controller    : 'passportController',
+      controllerAs  : 'passportCtrl'
+    })
     // .when('/myprofile', {
     //   templateUrl   : '/html/myprofile.html',
     //   controller    : 'profieController',
