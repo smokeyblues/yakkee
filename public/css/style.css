@@ -9,6 +9,9 @@
 /* import fonts */
  @import url('https://fonts.googleapis.com/css?family=Sigmar+One');
 
+.profile-pic-label {
+  margin-top: 5vh;
+}
 
 nav ul a,
 nav .brand-logo {
