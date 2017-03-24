@@ -30,10 +30,10 @@
         </div>
         <div class="row">
           <div class="input-field col s12 hoverable">
-            <label class="profile-pic-label">Please add a Profile Picture so that your friends and family can easily recognize you</label>
+            <label>Please add a Profile Picture so that your friends and family can easily recognize you</label>
             <br>
             <input
-         type="file"
+         type="file" class="profile-pic-label"
          ng-model="rc.signupUser.profileImg"
          ngf-accept="'image/*'"
          ngf-pattern="'image/*'"
