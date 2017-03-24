@@ -150,12 +150,16 @@ angular.module('Yakkee')
     }
 
     hc.sideNav = function() {
-      $('.button-collapse').sideNav();
+      $('.button-collapse').sideNav({
+        edge          : 'right',
+        closeOnClick  : true,
+        draggable     : true
+      });
     }
 
-    hc.hideNav = function() {
-      $('.button-collapse').sideNav('hide');
-    }
+    // hc.hideNav = function() {
+    //   $('.button-collapse').sideNav('hide');
+    // }
 
     $http.get('api/me')
       .then( function(resp){
