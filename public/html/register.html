@@ -33,12 +33,13 @@
             <label>Please add a Profile Picture so that your friends and family can easily recognize you</label>
             <br>
             <input
-         type="file" class="profile-pic-label"
+         type="file" class="profile-pic-label" name="profile-img"
          ng-model="rc.signupUser.profileImg"
          ngf-accept="'image/*'"
          ngf-pattern="'image/*'"
          ngf-select
          >
+         <span ng-show="form.profile-img.$error.file">A profile picture is required so please pick your best one! 😎 </span>
           </div>
         </div>
         <div class="row">
