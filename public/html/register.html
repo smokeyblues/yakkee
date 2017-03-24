@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="row">
-      <form class="col s12" ng-submit="rc.signup()">
+      <form class="col s12" name="signup" ng-submit="rc.signup()">
         <div class="row">
           <div class="input-field col s12 m6 hoverable">
             <input id="first_name" type="text" class="validate" ng-model="rc.signupUser.firstName">
@@ -38,8 +38,9 @@
          ngf-accept="'image/*'"
          ngf-pattern="'image/*'"
          ngf-select
+         required
          >
-         <span ng-show="form.profile-img.$error.file">A profile picture is required so please pick your best one! 😎 </span>
+         <span ng-show="signup.rc.signupUser.profileImg.$error.required">A profile picture is required so please pick your best one! 😎 </span>
           </div>
         </div>
         <div class="row">
