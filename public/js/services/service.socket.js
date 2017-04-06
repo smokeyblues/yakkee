@@ -10,7 +10,7 @@ angular.module('Yakkee').service('Socket', ['Auth', '$timeout',
       Auth.checkAuth()
         .then(function(user){
           if (user) {
-            console.log('AURH USER', user)
+            console.log('AUTH USER', user)
             sock.socket = io();
             // or is this where socket should notify server of online status -- my note
           }
