@@ -11,6 +11,18 @@ angular.module('Yakkee')
     hc.inviteReceived = false;
     hc.loader = false;
 
+    // sendInvite is the function that triggers a call.
+
+    // It emits an event vcInviteReceived that joins the socket.io chat room created when a user logs in. Each user has their own.
+    // Within this room an event called triggerInvite is triggered. The homeController is listening for this event but it is only triggered on the front end of the targeted user because it only went through their chat room.
+    // When triggerInvite is received it runs a function using the $apply method in order to render the changes immediately.
+    // These changes include toggling the inviteReceived value to true which makes the div with all the inviteData visible to the targeted user.
+    // It also passes the data from the sendInvite function to the front end in order to dynamically communicate who sent the message. 
+
+    // Triggers invite to user (to) from signed in user (from). All the logic is handled in server.js.
+    // emits the event 'vcInviteReceived' that is being listened for on line 138 of server.js
+    // also starts the loader to imitate a ringing video phone
+
     hc.sendInvite = function (to, from) {
       console.log(`'sendInvite' function was triggered`);
       hc.loader = true;
@@ -43,6 +55,10 @@ angular.module('Yakkee')
     Socket.on('beacon', function(){
       console.log('socket.io is working');
     })
+
+    // 'triggerInvite' logic
+
+    // 1. set inviteReceived to true for the user that received the invite through their private room.
 
     Socket.on('triggerInvite', function(inviteData){
       console.log('triggerInvite was triggered');

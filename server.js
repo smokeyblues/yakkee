@@ -135,6 +135,21 @@ io.on('connection', function(socket) {
     socket.broadcast.to(roomName).emit('cancelInvite');
   });
 
+  // Just kidding the notes start here fool! But since you are here anyway let's talk about what 'vcInviteReceived' does
+
+  // 'vcInviteReceived' takes inviteData as an argument. inviteData is an object that contains info on from.sender and to.user. The two parties in this exchange and the url string for the videochat room that will build the videochat room url.
+
+  // 1. determine chatroom name that invite has to be sent to.
+      // format : the word 'room' with the receiver's mongo id added - no space. ie. 'room' + inviteData.receiver._id
+
+  // 2. building inviterMessage. I don't think this is used.
+
+  // 3. joins receiver's chat room
+
+  // 4. broadcasts event 'triggerInvite' to recipient's room.
+
+  // 'triggerInvite' is being listened for on line 51 of controller.home.js
+
   socket.on('vcInviteReceived', function(inviteData) {
     console.log('vcInviteReceived was triggered');
     var inviteeRoom = `room${inviteData.receiver._id}`
